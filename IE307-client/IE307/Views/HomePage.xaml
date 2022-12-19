@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IE307.Views.HomePage"
+             Title="Trang chủ">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15,25,25,0">
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal">
+                    <Frame Padding="0"
+                           BackgroundColor="WhiteSmoke"
+                           CornerRadius="45"
+                           HasShadow="False"
+                           HeightRequest="40"
+                           HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Margin="20,10,0,10"
+                                   Aspect="AspectFit"
+                                   HeightRequest="18"
+                                   Source="search.png"
+                                   WidthRequest="18" />
+                            <Editor WidthRequest="300"
+                                    Placeholder="Tìm kiếm"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <!--danh mục sản phẩm-->
+                <ScrollView VerticalScrollBarVisibility="Never">
+                    <StackLayout>
+                        <StackLayout>
+                            <StackLayout Margin="0,5,0,5">
+                                <Label FontAttributes="Bold"
+                                       FontSize="18"
+                                       Text="Danh mục sản phẩm"
+                                       TextColor="Black">
+                                </Label>
+                                <ScrollView Orientation="Horizontal">
+                                    <StackLayout Margin="0,20,0,0"
+                                                 HeightRequest="110"
+                                                 Orientation="Horizontal">
+                                        <StackLayout Margin="0,0,10,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="rings.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Nhẫn"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="10,0,10,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="pendant.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Dây chuyền"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="10,0,10,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="earing.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Bông tai"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="10,0,10,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="bracelet.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Vòng tay"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="10,0,10,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="watch.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Đồng hồ"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="10,0,0,0">
+                                            <Frame Padding="0"
+                                                   CornerRadius="50"
+                                                   HeightRequest="80"
+                                                   WidthRequest="80"
+                                                   IsClippedToBounds="False">
+                                                <Image Margin="5"
+                                                       Aspect="AspectFit"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       Source="gift.png"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </Frame>
+                                            <Label FontSize="12"
+                                                   HorizontalOptions="Center"
+                                                   Text="Quà tặng"
+                                                   TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ScrollView>
+                            </StackLayout>
+                        </StackLayout>
+                   
+                        <!--bán chạy-->
+                        <StackLayout Margin="0,10,0,10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontAttributes="Bold"
+                                       FontSize="18"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="Sản phẩm bán chạy"
+                                       TextColor="Black">
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <CollectionView x:Name="CV_BestSale" SelectionMode="Single">
+                                    <CollectionView.ItemsLayout>
+                                        <GridItemsLayout Orientation="Vertical" Span="2"
+                                                         VerticalItemSpacing="5"
+                                                         HorizontalItemSpacing="10"></GridItemsLayout>
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                                <Grid 
+                                                  HorizontalOptions="CenterAndExpand">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.Row="0" Grid.Column="0">
+                                                        <StackLayout>
+                                                            <Frame CornerRadius="5"
+                                                               HasShadow="False"
+                                                               HorizontalOptions="Center"
+                                                               IsClippedToBounds="True">
+                                                                <Image Aspect="AspectFit"
+                                                                   HeightRequest="240"
+                                                                   Source="{Binding image}"
+                                                                   WidthRequest="165" />
+                                                            </Frame>
+                                                        </StackLayout>
+                                                        <StackLayout >
+                                                            <Label FontSize="16"
+                                                               HorizontalOptions="Start"
+                                                               Text="{Binding name}"
+                                                               TextColor="Black"
+                                                               VerticalOptions="Start"
+                                                               MaxLines="2"
+                                                               LineBreakMode="TailTruncation">
+                                                            </Label>
+                                                            <Label FontSize="16"
+                                                               HorizontalOptions="Start"
+                                                               Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                                               TextColor="OrangeRed"
+                                                               VerticalOptions="Start">
+                                                            </Label>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!--đề xuất-->
+                        <StackLayout Margin="0,10,0,10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontAttributes="Bold"
+                                       FontSize="18"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="Đề xuất"
+                                       TextColor="Black">
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <CollectionView x:Name="CV_Recommend">
+                                    <CollectionView.ItemsLayout>
+                                        <GridItemsLayout Orientation="Vertical" Span="2"
+                                                         VerticalItemSpacing="5"
+                                                         HorizontalItemSpacing="10"></GridItemsLayout>
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid HorizontalOptions="CenterAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout Grid.Row="0"
+                                                             Grid.Column="0">
+                                                    <StackLayout>
+                                                        <Frame CornerRadius="5"
+                                                               HasShadow="False"
+                                                               HorizontalOptions="Center"
+                                                               IsClippedToBounds="True">
+                                                            <Image Aspect="AspectFit"
+                                                                   HeightRequest="240"
+                                                                   Source="{Binding image}"
+                                                                   WidthRequest="165" />
+                                                        </Frame>
+                                                    </StackLayout>
+                                                    <StackLayout>
+                                                        <Label FontSize="16"
+                                                               HorizontalOptions="Start"
+                                                               Text="{Binding name}}"
+                                                               TextColor="Black"
+                                                               VerticalOptions="Start"
+                                                               MaxLines="2"
+                                                               LineBreakMode="TailTruncation">
+                                                        </Label>
+                                                        <Label FontSize="16"
+                                                               HorizontalOptions="Start"
+                                                               Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                               TextColor="OrangeRed"
+                                                               VerticalOptions="Start">
+                                                        </Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

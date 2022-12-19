@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IE307.Views.CartPage"
+             Title="Giỏ hàng">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="20,20,20,0">
+                <!--<CollectionView x:Name="collectionView"
+                                ItemsSource="{Binding itemPreview}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>-->
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                        <SwipeItem Text="Delete"
+                                                   IconImageSource="DeleteIcon.png"
+                                                   BackgroundColor="Red"
+                                                   CommandParameter="{Binding .}"
+                                                   Invoked="OnDeleteSwipeItemIvoked"></SwipeItem>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout>
+                                    <Frame Margin="0,8,0,8"
+                                           Padding="0"
+                                           BackgroundColor="Transparent"
+                                           HasShadow="True">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout Margin="0,0,15,0">
+                                                <Image Aspect="AspectFit"
+                                                       HeightRequest="120"
+                                                       Source="rings.png"
+                                                       WidthRequest="120" />
+                                            </StackLayout>
+
+                                            <StackLayout Margin="15,0,0,0">
+                                                <Label FontSize="16"
+                                                       HorizontalOptions="StartAndExpand"
+                                                       Text="Nhẫn vàng"
+                                                       TextColor="Black">
+                                                </Label>
+                                                <Label FontSize="16"
+                                                       HorizontalOptions="StartAndExpand"
+                                                       Text="100K"
+                                                       TextColor="DeepSkyBlue">
+                                                </Label>
+                                                <Frame Margin="0"
+                                                       Padding="0"
+                                                       BackgroundColor="WhiteSmoke"
+                                                       CornerRadius="8"
+                                                       HasShadow="False">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Button HeightRequest="40"
+                                                                VerticalOptions="FillAndExpand"
+                                                                WidthRequest="40"
+                                                                FontSize="16"
+                                                                HorizontalOptions="Center"
+                                                                Text="-"
+                                                                Background="lightgray"
+                                                                TextColor="Black"></Button>
+                                                        <StackLayout HeightRequest="40"
+                                                                     VerticalOptions="FillAndExpand"
+                                                                     WidthRequest="40">
+                                                            <Label FontSize="16"
+                                                                   HorizontalOptions="Center"
+                                                                   Text="0"
+                                                                   TextColor="Black"
+                                                                   VerticalOptions="CenterAndExpand"
+                                                                   VerticalTextAlignment="Center">
+                                                            </Label>
+                                                        </StackLayout>
+                                                        <Button HeightRequest="40"
+                                                                VerticalOptions="FillAndExpand"
+                                                                WidthRequest="40"
+                                                                FontSize="16"
+                                                                HorizontalOptions="Center"
+                                                                Text="+"
+                                                                Background="lightgray"
+                                                                TextColor="Black"></Button>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
+                        <!--</DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>-->
+            </StackLayout>
+
+
+            <StackLayout>
+                <StackLayout Margin="0,-5,0,0"
+                             BackgroundColor="White"
+                             HeightRequest="80"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="EndAndExpand">
+                    <BoxView Margin="0"
+                             BackgroundColor="WhiteSmoke"
+                             HeightRequest="1"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="StartAndExpand" />
+                    <Frame Padding="0"
+                           BackgroundColor="Transparent"
+                           HasShadow="True"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand">
+                        <StackLayout Margin="0,0,0,10"
+                                     Orientation="Horizontal"
+                                     VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Label Margin="30,0,35,0"
+                                       FontSize="12"
+                                       HorizontalOptions="Center"
+                                       Text="TỔNG TIỀN"
+                                       TextColor="Gray"
+                                       VerticalOptions="CenterAndExpand"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                                <Label Margin="30,0,35,0"
+                                       FontSize="18"
+                                       HorizontalOptions="Center"
+                                       Text="100k"
+                                       TextColor="DeepSkyBlue"
+                                       VerticalOptions="CenterAndExpand"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                            </StackLayout>
+                            <Button Margin="0,0,30,0"
+                                    Padding="0"
+                                    Text="MUA HÀNG"
+                                    WidthRequest="100"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="CenterAndExpand">
+                            </Button>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

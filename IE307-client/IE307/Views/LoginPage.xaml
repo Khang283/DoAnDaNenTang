@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="IE307.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand"
+                  RowSpacing="0"
+                  Padding="20,50,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                       Text="đăng nhập"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       TextTransform="Uppercase"
+                       HorizontalOptions="CenterAndExpand"></Label>
+                <BoxView Grid.Row="1"></BoxView>
+                <Label Grid.Row="2"
+                       Text="tài khoản"
+                       TextColor="Black"
+                       TextTransform="Uppercase"
+                       HorizontalOptions="StartAndExpand"></Label>
+                <Entry Grid.Row="3"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"></Entry>
+                <BoxView Grid.Row="4"></BoxView>
+                <Label Grid.Row="5"
+                       Text="Mật khẩu"
+                       TextColor="Black"
+                       TextTransform="Uppercase"
+                       HorizontalOptions="StartAndExpand"></Label>
+                <Entry Grid.Row="6"
+                       IsPassword="True"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"></Entry>
+                <BoxView Grid.Row="7"></BoxView>
+                <Button Grid.Row="8"
+                        Text="đăng nhập"
+                        CornerRadius="20"
+                        x:Name="btn_login"
+                        Clicked="btn_login_Clicked"></Button>
+                <BoxView Grid.Row="9"></BoxView>
+                <Button Grid.Row="10"
+                        Text="Quên mật khẩu?"
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        CornerRadius="20"
+                        BackgroundColor="White"
+                        TextColor="DeepSkyBlue"
+                        BorderWidth="2"></Button>
+                <StackLayout Grid.Row="11"
+                             Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand">
+                    <Label Text="Bạn chưa có tài khoản?"
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"></Label>
+                    <Button CornerRadius="20"
+                            Text="Đăng ký"
+                            BackgroundColor="White"
+                            TextColor="DeepSkyBlue"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="btn_register"
+                            Clicked="btn_register_Clicked"></Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
