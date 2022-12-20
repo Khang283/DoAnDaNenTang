@@ -24,7 +24,7 @@ namespace IE307.Views
 
         private void btn_login_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AppShell());
         }
     }
 }

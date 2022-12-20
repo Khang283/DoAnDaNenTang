@@ -62,9 +62,9 @@
                                        VerticalOptions="CenterAndExpand"
                                        WidthRequest="10" />
                             </StackLayout>
-                            <!--<StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="" />
-                            </StackLayout.GestureRecognizers>-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="editProfile_Clicked" />
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
 
                         <StackLayout Margin="20,5,5,5">
@@ -125,9 +125,10 @@
                                        VerticalOptions="CenterAndExpand"
                                        WidthRequest="10" />
                             </StackLayout>
-                            <!--<StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="" />
-                            </StackLayout.GestureRecognizers>-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding HelpCommand}"
+                                                      CommandParameter="https://www.microsoft.com/vi-vn/" />
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
 
 
@@ -156,9 +157,10 @@
                                        VerticalOptions="CenterAndExpand"
                                        WidthRequest="10" />
                             </StackLayout>
-                            <!--<StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="" />
-                            </StackLayout.GestureRecognizers>-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TermsCommand}"
+                                                      CommandParameter="https://learn.microsoft.com/en-us/xamarin/" />
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </StackLayout>
 

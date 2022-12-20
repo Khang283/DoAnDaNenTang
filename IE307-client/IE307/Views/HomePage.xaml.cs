@@ -23,7 +23,7 @@ namespace IE307.Views
         public async void LoadList()
         {
             HttpClient http = new HttpClient();
-            var result = await http.GetAsync("http://192.168.1.6:5001/products");
+            var result = await http.GetAsync("http://192.168.0.102:5001/products");
             var content= await result.Content.ReadAsStringAsync();
             try
             {
@@ -36,5 +36,6 @@ namespace IE307.Views
                 await DisplayAlert("Thông báo", err.ToString(), "OK");
             }
         }
+
     }
 }
