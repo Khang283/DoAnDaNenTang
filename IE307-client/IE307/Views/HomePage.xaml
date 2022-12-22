@@ -170,7 +170,7 @@
                                 </Label>
                             </StackLayout>
                             <StackLayout>
-                                <CollectionView x:Name="CV_BestSale" SelectionMode="Single">
+                                <CollectionView x:Name="CV_BestSale" SelectionMode="Single" SelectionChanged="CV_BestSale_SelectionChanged">
                                     <CollectionView.ItemsLayout>
                                         <GridItemsLayout Orientation="Vertical" Span="2"
                                                          VerticalItemSpacing="5"
@@ -237,7 +237,7 @@
                                 </Label>
                             </StackLayout>
                             <StackLayout>
-                                <CollectionView x:Name="CV_Recommend" >
+                                <CollectionView x:Name="CV_Recommend" SelectionMode="Single" SelectionChanged="CV_Recommend_SelectionChanged">
                                     <CollectionView.ItemsLayout>
                                         <GridItemsLayout Orientation="Vertical" Span="2"
                                                          VerticalItemSpacing="5"

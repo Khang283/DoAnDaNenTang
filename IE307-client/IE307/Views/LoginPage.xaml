@@ -41,7 +41,8 @@
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="3"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Username"></Entry>
                 <BoxView Grid.Row="4"></BoxView>
                 <Label Grid.Row="5"
                        Text="Mật khẩu"
@@ -51,10 +52,11 @@
                 <Entry Grid.Row="6"
                        IsPassword="True"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Password"></Entry>
                 <BoxView Grid.Row="7"></BoxView>
                 <Button Grid.Row="8"
-                        Text="đăng nhập"
+                        Text="Đăng nhập"
                         CornerRadius="20"
                         x:Name="btn_login"
                         Clicked="btn_login_Clicked"></Button>

@@ -28,7 +28,7 @@ namespace IE307.Views
 
         private void btnLogout_clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            Shell.Current.GoToAsync("//login");
         }
     }
 }

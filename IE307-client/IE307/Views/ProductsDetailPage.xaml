@@ -4,7 +4,7 @@
              x:Class="IE307.Views.ProductsDetailPage">
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView>
+            <ScrollView x:Name="SV_ProductDetail">
                 <StackLayout Margin="0,5,0,5">
                         <StackLayout Margin="5,-15,5,0">
                             <Frame HasShadow="False"
@@ -14,7 +14,7 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            HeightRequest="300"
-                                           Source="rings.png" />
+                                           Source="{Binding image}" />
                                 <Line X1="0"
                                       Y1="0"
                                       X2="1000"
@@ -23,14 +23,14 @@
                                     <Label FontAttributes="Bold"
                                            FontSize="30"
                                            HorizontalOptions="StartAndExpand"
-                                           Text="nhẫn vàng "
+                                           Text="{Binding name}"
                                            TextColor="Black"
                                            VerticalTextAlignment="Center">
                                     </Label>
                                     <Label Margin="0,15,0,0"
                                            FontSize="20"
                                            HorizontalOptions="StartAndExpand"
-                                           Text="100k"
+                                           Text="{Binding price, StringFormat='{0:F2} đ'}"
                                            TextColor="OrangeRed"
                                            VerticalTextAlignment="Center">
                                     </Label>
@@ -54,7 +54,8 @@
                                                 HorizontalOptions="Center"
                                                 Text="-"
                                                 Background="lightgray"
-                                                TextColor="Black"></Button>
+                                                TextColor="Black"
+                                                Clicked="btnMinus_Clicked"></Button>
                                         <StackLayout HeightRequest="50"
                                                      VerticalOptions="FillAndExpand"
                                                      WidthRequest="50">
@@ -63,7 +64,8 @@
                                                    Text="0"
                                                    TextColor="Black"
                                                    VerticalOptions="CenterAndExpand"
-                                                   VerticalTextAlignment="Center">
+                                                   VerticalTextAlignment="Center"
+                                                   x:Name="lb_Quanity">
                                             </Label>
                                         </StackLayout>
                                         <Button HeightRequest="50"
@@ -73,7 +75,8 @@
                                                 HorizontalOptions="Center"
                                                 Text="+"
                                                 Background="lightgray"
-                                                TextColor="Black"></Button>
+                                                TextColor="Black"
+                                                Clicked="btnPlus_Clicked"></Button>
                                     </StackLayout>
                                 </Grid>
                             </Frame>
@@ -91,7 +94,7 @@
                                     <Label FontSize="16"
                                            HorizontalOptions="StartAndExpand"
                                            VerticalTextAlignment="Center"
-                                           Text="dsaaaaaadadsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsaaaaaadadsddsd">
+                                           Text="{Binding description}">
                                     </Label>
                                 </StackLayout>
                             </Frame>

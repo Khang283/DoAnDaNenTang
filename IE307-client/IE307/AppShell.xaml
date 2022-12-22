@@ -29,10 +29,14 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <ShellContent Route="login" ContentTemplate="{DataTemplate local:LoginPage}">
+        
+    </ShellContent>
+    
     <TabBar>
-        <ShellContent Title="Trang chủ" Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}" />
-        <ShellContent Title="Giỏ hàng" Icon="shoppingcart.png" ContentTemplate="{DataTemplate local:CartPage}" />
-        <ShellContent Title="Tài khoản" Icon="user.png" ContentTemplate="{DataTemplate local:UserPage}"/>
+        <ShellContent Title="Trang chủ" Route="home" Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Title="Giỏ hàng" Route="cart" Icon="shoppingcart.png" ContentTemplate="{DataTemplate local:CartPage}" />
+        <ShellContent Title="Tài khoản" Route="user" Icon="user.png" ContentTemplate="{DataTemplate local:UserPage}"/>
     </TabBar>
 
     <!--
