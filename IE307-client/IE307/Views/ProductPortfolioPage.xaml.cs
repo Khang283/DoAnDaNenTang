@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace IE307.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class ProductPortfolioPage : ContentPage
     {
-        
-        public HomePage()
+        public ProductPortfolioPage()
         {
             InitializeComponent();
             LoadList();
@@ -25,14 +25,13 @@ namespace IE307.Views
         {
             HttpClient http = new HttpClient();
             var result = await http.GetAsync("http://192.168.0.102:5001/products");
-            var content= await result.Content.ReadAsStringAsync();
+            var content = await result.Content.ReadAsStringAsync();
             try
             {
-                var products=MongoDB.Bson.Serialization.BsonSerializer.Deserialize<List<Product>>(content);
+                var products = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<List<Product>>(content);
                 CV_BestSale.ItemsSource = products;
-                CV_Recommend.ItemsSource = products;
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 await DisplayAlert("Thông báo", err.ToString(), "OK");
             }

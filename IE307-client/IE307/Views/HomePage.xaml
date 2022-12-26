@@ -209,12 +209,24 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
-                                                            <Label FontSize="16"
-                                                                   HorizontalOptions="Start"
-                                                                   Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                                   TextColor="OrangeRed"
-                                                                   VerticalOptions="End">
-                                                            </Label>
+                                                            <Grid>
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Start"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="OrangeRed"
+                                                                       VerticalOptions="End">
+                                                                </Label>
+                                                                <Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToFavouritelist"
+                                                                                              Tapped="ImgAddToFavouritelist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -276,12 +288,24 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
-                                                            <Label FontSize="16"
-                                                                   HorizontalOptions="Start"
-                                                                   Text="{Binding price,StringFormat='{0:F2} đ'}"
-                                                                   TextColor="OrangeRed"
-                                                                   VerticalOptions="End">
-                                                            </Label>
+                                                            <StackLayout>
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Start"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="OrangeRed"
+                                                                       VerticalOptions="End">
+                                                                </Label>
+                                                                <Image Source="heart.png"
+                                                                       VerticalOptions="Center"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="20"
+                                                                       WidthRequest="20">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToFavouritelist"
+                                                                                              Tapped="ImgAddToFavouritelist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                            </StackLayout>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -291,6 +315,7 @@
                                 </CollectionView>
                             </StackLayout>
                         </StackLayout>
+
                     </StackLayout>
                 </ScrollView>
             </StackLayout>

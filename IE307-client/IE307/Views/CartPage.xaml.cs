@@ -17,7 +17,8 @@ namespace IE307.Views
             InitializeComponent();
         }
 
-        private async void OnDeleteSwipeItemIvoked(object sender, EventArgs e)
+
+        private async void Delete_Tapped(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Cảnh báo", "Bạn chắc chắn muốn xóa sản phẩm?", "Có", "KHÔNG");
             if (answer)

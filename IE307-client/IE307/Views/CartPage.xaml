@@ -11,80 +11,81 @@
                                 ItemsSource="{Binding itemPreview}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>-->
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
-                                        <SwipeItem Text="Delete"
-                                                   IconImageSource="DeleteIcon.png"
-                                                   BackgroundColor="Red"
-                                                   CommandParameter="{Binding .}"
-                                                   Invoked="OnDeleteSwipeItemIvoked"></SwipeItem>
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-                                <StackLayout>
-                                    <Frame Margin="0,8,0,8"
-                                           Padding="0"
-                                           BackgroundColor="Transparent"
-                                           HasShadow="True">
-                                        <StackLayout Orientation="Horizontal">
-                                            <StackLayout Margin="0,0,15,0">
-                                                <Image Aspect="AspectFit"
-                                                       HeightRequest="120"
-                                                       Source="rings.png"
-                                                       WidthRequest="120" />
-                                            </StackLayout>
-
-                                            <StackLayout Margin="15,0,0,0">
-                                                <Label FontSize="16"
-                                                       HorizontalOptions="StartAndExpand"
-                                                       Text="Nhẫn vàng"
-                                                       TextColor="Black">
-                                                </Label>
-                                                <Label FontSize="16"
-                                                       HorizontalOptions="StartAndExpand"
-                                                       Text="100K"
-                                                       TextColor="DeepSkyBlue">
-                                                </Label>
-                                                <Frame Margin="0"
-                                                       Padding="0"
-                                                       BackgroundColor="WhiteSmoke"
-                                                       CornerRadius="8"
-                                                       HasShadow="False">
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Button HeightRequest="40"
-                                                                VerticalOptions="FillAndExpand"
-                                                                WidthRequest="40"
-                                                                FontSize="16"
-                                                                HorizontalOptions="Center"
-                                                                Text="-"
-                                                                Background="lightgray"
-                                                                TextColor="Black"></Button>
-                                                        <StackLayout HeightRequest="40"
-                                                                     VerticalOptions="FillAndExpand"
-                                                                     WidthRequest="40">
-                                                            <Label FontSize="16"
-                                                                   HorizontalOptions="Center"
-                                                                   Text="0"
-                                                                   TextColor="Black"
-                                                                   VerticalOptions="CenterAndExpand"
-                                                                   VerticalTextAlignment="Center">
-                                                            </Label>
-                                                        </StackLayout>
-                                                        <Button HeightRequest="40"
-                                                                VerticalOptions="FillAndExpand"
-                                                                WidthRequest="40"
-                                                                FontSize="16"
-                                                                HorizontalOptions="Center"
-                                                                Text="+"
-                                                                Background="lightgray"
-                                                                TextColor="Black"></Button>
-                                                    </StackLayout>
-                                                </Frame>
-                                            </StackLayout>
+                            <StackLayout>
+                                <Frame Margin="0,8,0,8"
+                                       Padding="0"
+                                       BackgroundColor="Transparent"
+                                       HasShadow="True">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout Margin="0,0,15,0">
+                                            <Image Aspect="AspectFit"
+                                                   HeightRequest="120"
+                                                   Source="rings.png"
+                                                   WidthRequest="120" />
                                         </StackLayout>
-                                    </Frame>
-                                </StackLayout>
-                            </SwipeView>
+                                        <StackLayout Margin="15,0,0,0">
+                                            <Label FontSize="16"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   Text="Nhẫn vàng"
+                                                   TextColor="Black">
+                                            </Label>
+                                            <Label FontSize="16"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   Text="100K"
+                                                   TextColor="DeepSkyBlue">
+                                            </Label>
+                                            <Frame Margin="0"
+                                                   Padding="0"
+                                                   BackgroundColor="WhiteSmoke"
+                                                   CornerRadius="8"
+                                                   HasShadow="False">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Button HeightRequest="40"
+                                                            VerticalOptions="FillAndExpand"
+                                                            WidthRequest="40"
+                                                            FontSize="16"
+                                                            HorizontalOptions="Center"
+                                                            Text="-"
+                                                            Background="lightgray"
+                                                            TextColor="Black"></Button>
+                                                    <StackLayout HeightRequest="40"
+                                                                 VerticalOptions="FillAndExpand"
+                                                                 WidthRequest="40">
+                                                        <Label FontSize="16"
+                                                               HorizontalOptions="Center"
+                                                               Text="1"
+                                                               TextColor="Black"
+                                                               VerticalOptions="CenterAndExpand"
+                                                               VerticalTextAlignment="Center">
+                                                        </Label>
+                                                    </StackLayout>
+                                                    <Button HeightRequest="40"
+                                                            VerticalOptions="FillAndExpand"
+                                                            WidthRequest="40"
+                                                            FontSize="16"
+                                                            HorizontalOptions="Center"
+                                                            Text="+"
+                                                            Background="lightgray"
+                                                            TextColor="Black"></Button>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Margin="30,0,0,0"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="Center">
+                                            <Image Aspect="AspectFit"
+                                                   HeightRequest="30"
+                                                   Source="DeleteIcon.png"
+                                                   WidthRequest="30">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer x:Name="Delete"
+                                                                          Tapped="Delete_Tapped"></TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
                         <!--</DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>-->
