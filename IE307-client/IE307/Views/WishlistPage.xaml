@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IE307.Views.WishlistPage"
+             Title="Sản phẩm yêu thích"
+             Shell.NavBarIsVisible="False">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15,5,25,0">
+            <StackLayout Margin="0,10,0,10">
+                <StackLayout Orientation="Horizontal">
+                    <Label FontAttributes="Bold"
+                           FontSize="18"
+                           HorizontalOptions="StartAndExpand"
+                           Text="Sản phẩm yêu thích"
+                           TextColor="Black">
+                    </Label>
+                </StackLayout>
+                <StackLayout>
+                    <CollectionView x:Name="CV_BestSale"
+                                    SelectionMode="Single">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical"
+                                             Span="2"
+                                             VerticalItemSpacing="5"
+                                             HorizontalItemSpacing="10"></GridItemsLayout>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalOptions="CenterAndExpand"
+                                      Padding="0,10,0,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame HasShadow="False"
+                                           Padding="2"
+                                           BackgroundColor="#F5F5F5">
+                                        <StackLayout>
+                                            <StackLayout>
+                                                <Frame CornerRadius="5"
+                                                       HasShadow="False"
+                                                       HorizontalOptions="Center"
+                                                       IsClippedToBounds="True">
+                                                    <Image Aspect="AspectFit"
+                                                           HeightRequest="150"
+                                                           Source="{Binding image}"
+                                                           WidthRequest="150" />
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Label FontSize="16"
+                                                       HorizontalOptions="Start"
+                                                       Text="{Binding name}"
+                                                       TextColor="Black"
+                                                       VerticalOptions="End"
+                                                       MaxLines="2"
+                                                       LineBreakMode="TailTruncation">
+                                                </Label>
+                                                <Grid>
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="Start"
+                                                           Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                           TextColor="OrangeRed"
+                                                           VerticalOptions="End">
+                                                    </Label>
+                                                    <Image Source="redheart.png"
+                                                           HorizontalOptions="End"
+                                                           Aspect="AspectFill"
+                                                           HeightRequest="25"
+                                                           WidthRequest="25">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer x:Name="ImgAddToWishlist"
+                                                                                  Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Grid>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IE307.Views.HomePage"
-             Title="Trang chủ">
+             Title="Trang chủ"
+             Shell.NavBarIsVisible="False">
 
     <ContentPage.Content>
         <StackLayout>
@@ -178,7 +179,8 @@
                                     </CollectionView.ItemsLayout>
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid HorizontalOptions="CenterAndExpand" Padding="0,10,0,10">
+                                            <Grid HorizontalOptions="CenterAndExpand"
+                                                  Padding="0,10,0,10">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*"></RowDefinition>
                                                 </Grid.RowDefinitions>
@@ -209,17 +211,38 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
-                                                            <Label FontSize="16"
-                                                                   HorizontalOptions="Start"
-                                                                   Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                                   TextColor="OrangeRed"
-                                                                   VerticalOptions="End">
-                                                            </Label>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="5"
+                                                                       FontSize="16"
+                                                                       TextColor="Black" />
+                                                                <Image Source="star.png"
+                                                                       VerticalOptions="Center"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="20"
+                                                                       WidthRequest="20"></Image>
+                                                            </StackLayout>
+                                                            <Grid>
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Start"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="OrangeRed"
+                                                                       VerticalOptions="End">
+                                                                </Label>
+                                                                <Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
                                             </Grid>
-                                            
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>
                                 </CollectionView>
@@ -276,12 +299,34 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
-                                                            <Label FontSize="16"
-                                                                   HorizontalOptions="Start"
-                                                                   Text="{Binding price,StringFormat='{0:F2} đ'}"
-                                                                   TextColor="OrangeRed"
-                                                                   VerticalOptions="End">
-                                                            </Label>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="5"
+                                                                       FontSize="16"
+                                                                       TextColor="Black" />
+                                                                <Image Source="star.png"
+                                                                       VerticalOptions="Center"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="20"
+                                                                       WidthRequest="20"></Image>
+                                                            </StackLayout>
+                                                            <Grid>
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Start"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="OrangeRed"
+                                                                       VerticalOptions="End">
+                                                                </Label>
+                                                                <Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -291,6 +336,7 @@
                                 </CollectionView>
                             </StackLayout>
                         </StackLayout>
+
                     </StackLayout>
                 </ScrollView>
             </StackLayout>

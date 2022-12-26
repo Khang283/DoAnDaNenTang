@@ -15,6 +15,7 @@ namespace IE307.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
+        int favouriteTapCount = 0;
         public HomePage()
         {
             InitializeComponent();
@@ -48,6 +49,12 @@ namespace IE307.Views
         {
             Product product = CV_Recommend.SelectedItem as Product;
             Navigation.PushAsync(new ProductsDetailPage(product));
+        }
+        private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
+        {
+            favouriteTapCount++;
+            Image img = sender as Image;
+            img.Source = favouriteTapCount % 2 == 0 ? "heart.png" : "redheart.png";
         }
     }
 }
