@@ -18,7 +18,12 @@ namespace IE307.Views
         public UserPage()
         {
             InitializeComponent();
+            /*session
+                circleci*/
             BindingContext = this;
+            lb_Username.Text = Application.Current.Properties["username"].ToString();
+            lb_Email.Text = Application.Current.Properties["email"].ToString();
+
         }
 
         private void editProfile_Clicked(object sender, EventArgs e)

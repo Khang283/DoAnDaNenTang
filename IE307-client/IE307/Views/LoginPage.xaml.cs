@@ -1,5 +1,6 @@
 ﻿
 using IE307.Models;
+using IE307.Share;
 using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
 using Newtonsoft.Json;
@@ -38,9 +39,15 @@ namespace IE307.Views
             };
             StringContent request_data = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(account),System.Text.Encoding.UTF8,"application/json");
             HttpClient http = new HttpClient();
-            var result = await http.PostAsync("http://172.30.203.165:5001/account/login", request_data);
+            var result = await http.PostAsync("http://" + Utility.API_Endpoint + ":5001/account/login", request_data);
             if (result.StatusCode.ToString()=="OK")
             {
+                var content = await result.Content.ReadAsStringAsync();
+                var accountInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<Account>(content);
+                Application.Current.Properties["username"] = accountInfo.username;
+                Application.Current.Properties["email"] = accountInfo.email ;
+                Application.Current.Properties["phone"] = accountInfo.phone;
+                Application.Current.Properties["address"] = accountInfo.address;
                 await Shell.Current.GoToAsync("//home");
             }
             else if (result.StatusCode.ToString()=="NotFound")

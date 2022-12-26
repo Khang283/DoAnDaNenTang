@@ -42,7 +42,8 @@
                    HorizontalOptions="StartAndExpand"></Label>
             <Entry Grid.Row="3"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"></Entry>
+                   VerticalOptions="FillAndExpand"
+                   x:Name="ent_Username"></Entry>
             <BoxView Grid.Row="4"></BoxView>
             <Label Grid.Row="5"
                    Text="email"
@@ -51,7 +52,8 @@
                    HorizontalOptions="StartAndExpand"></Label>
             <Entry Grid.Row="6"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"></Entry>
+                   VerticalOptions="FillAndExpand"
+                   x:Name="ent_Email"></Entry>
             <BoxView Grid.Row="7"></BoxView>
             <Label Grid.Row="8"
                    Text="Mật khẩu"
@@ -61,7 +63,8 @@
             <Entry Grid.Row="9"
                    IsPassword="True"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"></Entry>
+                   VerticalOptions="FillAndExpand"
+                   x:Name="ent_Password"></Entry>
             <BoxView Grid.Row="10"></BoxView>
             <Label Grid.Row="11"
                    Text="Nhập lại Mật khẩu"
@@ -71,11 +74,13 @@
             <Entry Grid.Row="12"
                    IsPassword="True"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"></Entry>
+                   VerticalOptions="FillAndExpand"
+                   x:Name="ent_PasswordRetype"></Entry>
             <BoxView Grid.Row="13"></BoxView>
             <Button Grid.Row="14"
                     Text="Đăng ký"
-                    CornerRadius="20"></Button>
+                    CornerRadius="20"
+                    Clicked="btn_Register_Clicked"></Button>
             <BoxView Grid.Row="15"></BoxView>
             <StackLayout Grid.Row="16"
                          Orientation="Horizontal"

@@ -15,14 +15,34 @@ namespace IE307.Views
         public EditProfilePage()
         {
             InitializeComponent();
+            SetEntry();
         }
 
-        private void saveprofile_Clicked(object sender, EventArgs e)
+        public void SetEntry()
         {
+            ent_Username.Text = Application.Current.Properties["username"].ToString();
+            ent_Email.Text = Application.Current.Properties["email"].ToString();
+            try
+            {
+                ent_Phone.Text = Application.Current.Properties["phone"].ToString();
+            }
+            catch
+            {
+                ent_Phone.Text = "";
+            }
 
+            try
+            {
+                ent_Address.Text = Application.Current.Properties["address"].ToString();
+            }
+            catch
+            {
+                ent_Address.Text = "";
+            }
+            
         }
 
-        private void cancel_Clicked(object sender, EventArgs e)
+        private void btn_UpdateInfo_Clicked(object sender, EventArgs e)
         {
 
         }

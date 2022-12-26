@@ -25,13 +25,15 @@
                                    HorizontalOptions="CenterAndExpand"
                                    Text="1"
                                    TextColor="Black"
-                                   VerticalTextAlignment="Center">
+                                   VerticalTextAlignment="Center"
+                                   x:Name="lb_Username">
                             </Label>
                             <Label FontSize="14"
                                    HorizontalOptions="CenterAndExpand"
                                    Text="1@gmail.com"
                                    TextColor="Black"
-                                   VerticalTextAlignment="Center">
+                                   VerticalTextAlignment="Center"
+                                   x:Name="lb_Email">
                             </Label>
                         </StackLayout>
                     </StackLayout>

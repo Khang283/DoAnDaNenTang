@@ -1,4 +1,5 @@
 ﻿using IE307.Models;
+using IE307.Share;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace IE307.Views
         public async void LoadList()
         {
             HttpClient http = new HttpClient();
-            var result = await http.GetAsync("http://172.30.203.165:5001/products");
+            var result = await http.GetAsync("http://" + Utility.API_Endpoint + ":5001/products");
             var content= await result.Content.ReadAsStringAsync();
             try
             {
