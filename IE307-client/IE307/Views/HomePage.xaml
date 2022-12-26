@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IE307.Views.HomePage"
-             Title="Trang chủ">
+             Title="Trang chủ"
+             Shell.NavBarIsVisible="False">
 
     <ContentPage.Content>
         <StackLayout>
@@ -178,7 +179,8 @@
                                     </CollectionView.ItemsLayout>
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid HorizontalOptions="CenterAndExpand" Padding="0,10,0,10">
+                                            <Grid HorizontalOptions="CenterAndExpand"
+                                                  Padding="0,10,0,10">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*"></RowDefinition>
                                                 </Grid.RowDefinitions>
@@ -209,6 +211,16 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="5"
+                                                                       FontSize="16"
+                                                                       TextColor="Black" />
+                                                                <Image Source="star.png"
+                                                                       VerticalOptions="Center"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="20"
+                                                                       WidthRequest="20"></Image>
+                                                            </StackLayout>
                                                             <Grid>
                                                                 <Label FontSize="16"
                                                                        HorizontalOptions="Start"
@@ -222,8 +234,8 @@
                                                                        HeightRequest="25"
                                                                        WidthRequest="25">
                                                                     <Image.GestureRecognizers>
-                                                                        <TapGestureRecognizer x:Name="ImgAddToFavouritelist"
-                                                                                              Tapped="ImgAddToFavouritelist_Tapped"></TapGestureRecognizer>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
                                                                     </Image.GestureRecognizers>
                                                                 </Image>
                                                             </Grid>
@@ -231,7 +243,6 @@
                                                     </StackLayout>
                                                 </Frame>
                                             </Grid>
-                                            
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>
                                 </CollectionView>
@@ -288,7 +299,17 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
-                                                            <StackLayout>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="5"
+                                                                       FontSize="16"
+                                                                       TextColor="Black" />
+                                                                <Image Source="star.png"
+                                                                       VerticalOptions="Center"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="20"
+                                                                       WidthRequest="20"></Image>
+                                                            </StackLayout>
+                                                            <Grid>
                                                                 <Label FontSize="16"
                                                                        HorizontalOptions="Start"
                                                                        Text="{Binding price,StringFormat='{0:F2} đ'}"
@@ -296,16 +317,16 @@
                                                                        VerticalOptions="End">
                                                                 </Label>
                                                                 <Image Source="heart.png"
-                                                                       VerticalOptions="Center"
+                                                                       HorizontalOptions="End"
                                                                        Aspect="AspectFill"
-                                                                       HeightRequest="20"
-                                                                       WidthRequest="20">
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
                                                                     <Image.GestureRecognizers>
-                                                                        <TapGestureRecognizer x:Name="ImgAddToFavouritelist"
-                                                                                              Tapped="ImgAddToFavouritelist_Tapped"></TapGestureRecognizer>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
                                                                     </Image.GestureRecognizers>
                                                                 </Image>
-                                                            </StackLayout>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>

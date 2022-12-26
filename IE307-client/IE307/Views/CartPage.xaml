@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IE307.Views.CartPage"
-             Title="Giỏ hàng">
+             Title="Giỏ hàng"
+             Shell.NavBarIsVisible="False">
     
     <ContentPage.Content>
         <StackLayout>
@@ -131,7 +132,7 @@
                             </StackLayout>
                             <Button Margin="0,0,30,0"
                                     Padding="0"
-                                    Text="MUA HÀNG"
+                                    Text="THANH TOÁN"
                                     WidthRequest="100"
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="CenterAndExpand">

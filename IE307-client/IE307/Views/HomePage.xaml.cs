@@ -39,7 +39,7 @@ namespace IE307.Views
         }
 
         int favouriteTapCount = 0;
-        private void ImgAddToFavouritelist_Tapped(object sender, EventArgs e)
+        private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
         {
             favouriteTapCount++;
             Image img = sender as Image;

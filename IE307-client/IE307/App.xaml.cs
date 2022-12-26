@@ -12,7 +12,7 @@ namespace IE307
         public App()
         {
             InitializeComponent();
-            MainPage = new CartPage();
+            MainPage = new AppShell();
             //MainPage = new NavigationPage(new LoginPage());
         }
 
