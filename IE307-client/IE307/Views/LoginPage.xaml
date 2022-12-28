@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="IE307.Views.LoginPage"
              Shell.NavBarIsVisible="False"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="False"
+             Title="Đăng nhập">
     <ContentPage.Content>
         <ScrollView>
             <Grid HorizontalOptions="FillAndExpand"
