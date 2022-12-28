@@ -9,3 +9,4 @@ routes.put('/inc',CartController.inc);
 routes.put('/reduce',CartController.reduce);
 
 module.exports=routes;
+module.exports=routes;

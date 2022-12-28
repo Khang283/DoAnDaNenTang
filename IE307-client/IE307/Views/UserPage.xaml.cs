@@ -35,7 +35,10 @@ namespace IE307.Views
         {
             Navigation.PushAsync(new EditProfilePage());
         }
-
+        private void ChangePassword_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ChangePasswordPage());
+        }
         private void btnLogout_clicked(object sender, EventArgs e)
         {
             Shell.Current.GoToAsync("//login");
