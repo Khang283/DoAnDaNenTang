@@ -20,10 +20,15 @@ namespace IE307.Views
             InitializeComponent();
             /*session
                 circleci*/
-            BindingContext = this;
+            //BindingContext = this;
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             lb_Username.Text = Application.Current.Properties["username"].ToString();
             lb_Email.Text = Application.Current.Properties["email"].ToString();
-
         }
 
         private void editProfile_Clicked(object sender, EventArgs e)

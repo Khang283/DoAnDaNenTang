@@ -2,6 +2,29 @@ const Account = require('../models/Account');
 
 class AccountController{
 
+    //[PUT] account/update
+    update(req, res){
+        const userId=req.body.userID;
+        const data={
+            username: req.body.username,
+            //password: req.body.password,
+            email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
+        }
+        Account.findByIdAndUpdate(userId,data,(err,account)=>{
+            if(account){
+                return res.status(200).send("Cập nhật tài khoản thành công");
+            }
+            else if(err){
+                return res.status(500).send("Tên tài khoản đã tồn tại");
+            }
+            else{
+                return res.status(404).send("Không tìm thấy tài khoản");
+            }
+        })
+    }
+
     //[POST] account/login
     login(req, res){
         let username=req.body.username;
@@ -25,6 +48,8 @@ class AccountController{
             username: req.body.username,
             password: req.body.password,
             email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
         }
         console.log(data);
         try{

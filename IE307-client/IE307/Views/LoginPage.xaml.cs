@@ -43,7 +43,8 @@ namespace IE307.Views
             if (result.StatusCode.ToString()=="OK")
             {
                 var content = await result.Content.ReadAsStringAsync();
-                var accountInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<Account>(content);
+                var accountInfo = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<Account>(content);
+                Application.Current.Properties["userID"] = accountInfo.userId;
                 Application.Current.Properties["username"] = accountInfo.username;
                 Application.Current.Properties["email"] = accountInfo.email ;
                 Application.Current.Properties["phone"] = accountInfo.phone;

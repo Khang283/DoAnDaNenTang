@@ -20,7 +20,7 @@ namespace IE307.Views
             InitializeComponent();
             Title = "Đăng ký";
         }
-
+        
         private void btn_Login_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new LoginPage());
@@ -31,7 +31,9 @@ namespace IE307.Views
             var username=ent_Username.Text; 
             var password=ent_Password.Text; 
             var password_retype=ent_PasswordRetype.Text;
-            var email=ent_Email.Text;   
+            var email = ent_Email.Text;
+            var address = ent_Address.Text; 
+            var phone = ent_Phone.Text; 
             if(username==null || password == null || email==null || password_retype==null)
             {
                 await DisplayAlert("Thông báo", "Bạn chưa điền đầy đủ thông tin", "OK");
@@ -48,6 +50,8 @@ namespace IE307.Views
                     username = username,
                     password = password,
                     email = email,
+                    phone = phone,
+                    address = address,
                 };
                 StringContent request_data = new StringContent(JsonConvert.SerializeObject(account), System.Text.Encoding.UTF8, "application/json");
                 var result =await http.PostAsync("http://"+Utility.API_Endpoint+":5001/account/register", request_data);
