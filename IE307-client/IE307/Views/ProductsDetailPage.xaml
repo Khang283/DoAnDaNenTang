@@ -1,125 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IE307.Views.ProductsDetailPage"
-             Shell.NavBarIsVisible="False">
+             x:Class="IE307.Views.ProductsDetailPage">
     <ContentPage.Content>
+       
+            <!--  Body  -->
         <StackLayout>
             <ScrollView x:Name="SV_ProductDetail">
-                <StackLayout Margin="0,5,0,5">
-                        <StackLayout Margin="5,-15,5,0">
-                            <Frame HasShadow="False"
-                                   BackgroundColor="#F5F5F5">
-                                <StackLayout Margin="0,15,0,0">
-                                    <Image Aspect="AspectFit"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           HeightRequest="300"
-                                           Source="{Binding image}" />
-                                <Line X1="0"
-                                      Y1="0"
-                                      X2="1000"
-                                      Y2="0"
-                                      Stroke="black"></Line>
-                                    <Label FontAttributes="Bold"
-                                           FontSize="30"
-                                           HorizontalOptions="StartAndExpand"
-                                           Text="{Binding name}"
-                                           TextColor="Black"
-                                           VerticalTextAlignment="Center">
-                                    </Label>
-                                    <Label Margin="0,15,0,0"
-                                           FontSize="20"
-                                           HorizontalOptions="StartAndExpand"
-                                           Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                           TextColor="OrangeRed"
-                                           VerticalTextAlignment="Center">
-                                    </Label>
-                                </StackLayout>
-                            </Frame>
-                            <Frame HasShadow="False"
-                                   BackgroundColor="#F5F5F5">
-                                <Grid Margin="0,15,0,15">
-                                    <Label FontSize="20"
-                                           HorizontalOptions="StartAndExpand"
-                                           Text="Số lượng: "
-                                           TextColor="Black"
-                                           VerticalTextAlignment="Center">
-                                    </Label>
-                                    <StackLayout Orientation="Horizontal"
-                                                 HorizontalOptions="EndAndExpand">
-                                        <Button HeightRequest="50"
-                                                VerticalOptions="Start"
-                                                WidthRequest="50"
-                                                FontSize="20"
-                                                HorizontalOptions="Center"
-                                                Text="-"
-                                                Background="lightgray"
-                                                TextColor="Black"
-                                                Clicked="btnMinus_Clicked"></Button>
-                                        <StackLayout HeightRequest="50"
-                                                     VerticalOptions="FillAndExpand"
-                                                     WidthRequest="50">
-                                            <Label FontSize="20"
-                                                   HorizontalOptions="Center"
-                                                   Text="0"
-                                                   TextColor="Black"
-                                                   VerticalOptions="CenterAndExpand"
-                                                   VerticalTextAlignment="Center"
-                                                   x:Name="lb_Quanity">
-                                            </Label>
-                                        </StackLayout>
-                                        <Button HeightRequest="50"
-                                                VerticalOptions="Start"
-                                                WidthRequest="50"
-                                                FontSize="20"
-                                                HorizontalOptions="Center"
-                                                Text="+"
-                                                Background="lightgray"
-                                                TextColor="Black"
-                                                Clicked="btnPlus_Clicked"></Button>
-                                    </StackLayout>
-                                </Grid>
-                            </Frame>
-                            <Frame HasShadow="False"
-                                   BackgroundColor="#F5F5F5">
-                                <StackLayout Margin="0,15,0,15">
-                                    <Label FontAttributes="Bold"
-                                           FontSize="20"
-                                           HorizontalOptions="StartAndExpand"
-                                           Text="Mô tả sản phẩm"
-                                           TextColor="Black"
-                                           TextTransform="Uppercase"
-                                           VerticalTextAlignment="Center">
-                                    </Label>
-                                    <Label FontSize="16"
-                                           HorizontalOptions="StartAndExpand"
-                                           VerticalTextAlignment="Center"
-                                           Text="{Binding description}">
-                                    </Label>
-                                </StackLayout>
-                            </Frame>
+                <StackLayout>
+                    <Image Aspect="AspectFit"
+                           HeightRequest="300"
+                           Source="rings.png" />
+                    <StackLayout>
+                        <StackLayout Margin="15,0,15,0">
+                            <StackLayout>
+                                <Label FontAttributes="Bold"
+                                       FontSize="26"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="{Binding name}"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                                <Label FontSize="20"
+                                       Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                       TextColor="OrangeRed"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="StartAndExpand">
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label FontAttributes="Bold"
+                                       FontSize="18"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="Mô tả"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                                <Label FontSize="14"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="{Binding description}"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                
+                </StackLayout>
             </ScrollView>
             
-            <!--  Thêm vào giỏ hàng  -->
-            <StackLayout BackgroundColor="White"
-                         HeightRequest="60"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="EndAndExpand">
-                <Button Padding="0"
+            <!--  thêm vào giỏ hàng / nút like -->
+            <Grid BackgroundColor="White"
+                  HeightRequest="60"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="EndAndExpand">
+
+                <StackLayout  Margin="10,0,0,0"
+                             HorizontalOptions="Start"
+                             VerticalOptions="Center"
+                             HeightRequest="50"
+                             WidthRequest="50"
+                             IsClippedToBounds="False">
+                    <Image Aspect="AspectFit"
+                           HorizontalOptions="CenterAndExpand"
+                           Source="heart.png"
+                           VerticalOptions="CenterAndExpand">
+                        <!--<Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                  Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>-->
+                    </Image>
+                </StackLayout>
+
+                <Button Margin="0,0,10,0"
                         CornerRadius="5"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
                         FontSize="14"
                         TextColor="White"
                         Text="Thêm vào giỏ hàng"
-                        WidthRequest="300">
+                        HeightRequest="50"
+                        WidthRequest="333">
                 </Button>
-            </StackLayout>
-
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
