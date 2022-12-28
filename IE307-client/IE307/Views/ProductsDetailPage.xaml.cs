@@ -18,7 +18,31 @@ namespace IE307.Views
             InitializeComponent();
         }
 
-        int favouriteTapCount = 0;
+        public ProductsDetailPage(Product product)
+        {
+            InitializeComponent();
+            Title = product.name;
+            SV_ProductDetail.BindingContext = product;
+        }
+
+        //private void btnMinus_Clicked(object sender, EventArgs e)
+        //{
+        //    var quantity = Convert.ToInt32(lb_Quanity.Text);
+        //    if(quantity > 0)
+        //    {
+        //        quantity--;
+        //        lb_Quanity.Text = quantity.ToString();
+        //    }
+        //}
+
+        //private void btnPlus_Clicked(object sender, EventArgs e)
+        //{
+        //    var quantity = Convert.ToInt32(lb_Quanity.Text);
+        //    quantity++;
+        //    lb_Quanity.Text = quantity.ToString();
+        //}
+
+        //int favouriteTapCount = 0;
 
         //private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
         //{

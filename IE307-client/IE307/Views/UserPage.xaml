@@ -26,13 +26,15 @@
                                    HorizontalOptions="CenterAndExpand"
                                    Text="1"
                                    TextColor="Black"
-                                   VerticalTextAlignment="Center">
+                                   VerticalTextAlignment="Center"
+                                   x:Name="lb_Username">
                             </Label>
                             <Label FontSize="14"
                                    HorizontalOptions="CenterAndExpand"
                                    Text="1@gmail.com"
                                    TextColor="Black"
-                                   VerticalTextAlignment="Center">
+                                   VerticalTextAlignment="Center"
+                                   x:Name="lb_Email">
                             </Label>
                         </StackLayout>
                     </StackLayout>
@@ -65,6 +67,36 @@
                             </StackLayout>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="editProfile_Clicked" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                        <StackLayout Margin="20,5,5,5">
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Aspect="AspectFill"
+                                           HeightRequest="40"
+                                           HorizontalOptions="StartAndExpand"
+                                           Source="password.png"
+                                           WidthRequest="40" />
+                                    <Label Margin="15,0,0,0"
+                                           FontSize="18"
+                                           HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           Text="Đổi mật khẩu"
+                                           TextColor="Black"
+                                           VerticalTextAlignment="Center">
+                                    </Label>
+                                </StackLayout>
+                                <Image Margin="20,0,20,0"
+                                       Aspect="AspectFit"
+                                       HeightRequest="10"
+                                       HorizontalOptions="EndAndExpand"
+                                       Source="more"
+                                       VerticalOptions="CenterAndExpand"
+                                       WidthRequest="10" />
+                            </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ChangePassword_Clicked" />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
 

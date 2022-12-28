@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IE307.Views.RegisterPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <ScrollView>
             <Grid HorizontalOptions="FillAndExpand"
@@ -48,7 +49,8 @@
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="3"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Username"></Entry>
                 <BoxView Grid.Row="4"></BoxView>
                 <Label Grid.Row="5"
                        Text="Mật khẩu"
@@ -58,7 +60,8 @@
                 <Entry Grid.Row="6"
                        IsPassword="True"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Password"></Entry>
                 <BoxView Grid.Row="7"></BoxView>
                 <Label Grid.Row="8"
                        Text="Nhập lại Mật khẩu"
@@ -68,7 +71,8 @@
                 <Entry Grid.Row="9"
                        IsPassword="True"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_PasswordRetype"></Entry>
                 <BoxView Grid.Row="10"></BoxView>
                 <Label Grid.Row="11"
                        Text="email"
@@ -77,7 +81,8 @@
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="12"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Email"></Entry>
                 <BoxView Grid.Row="13"></BoxView>
                 <Label Grid.Row="14"
                        Text="Địa chỉ"
@@ -86,7 +91,8 @@
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="15"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Address"></Entry>
                 <BoxView Grid.Row="16"></BoxView>
                 <Label Grid.Row="17"
                        Text="Số điện thoại"
@@ -95,11 +101,14 @@
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="18"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Phone"></Entry>
                 <BoxView Grid.Row="19"></BoxView>
                 <Button Grid.Row="20"
                         Text="Đăng ký"
-                        CornerRadius="20"></Button>
+                        CornerRadius="20"
+                        x:Name="btn_Register"
+                        Clicked="btn_Register_Clicked"></Button>
                 <BoxView Grid.Row="21"></BoxView>
                 <StackLayout Grid.Row="22"
                              Orientation="Horizontal"

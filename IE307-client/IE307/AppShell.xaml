@@ -3,8 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:IE307.Views"
        Title="IE307"
-       x:Class="IE307.AppShell"
-       Shell.NavBarIsVisible="False">
+       x:Class="IE307.AppShell">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -30,11 +29,15 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <ShellContent Route="login" ContentTemplate="{DataTemplate local:LoginPage}">
+        
+    </ShellContent>
+    
     <TabBar>
-        <ShellContent Title="Trang chủ" Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}" />
-        <ShellContent Title="Yêu Thích" Icon="heart.png" ContentTemplate="{DataTemplate local:WishlistPage}"/>
-        <ShellContent Title="Giỏ hàng" Icon="shoppingcart.png" ContentTemplate="{DataTemplate local:CartPage}" />
-        <ShellContent Title="Tài khoản" Icon="user.png" ContentTemplate="{DataTemplate local:UserPage}"/>
+        <ShellContent Title="Trang chủ" Route="home"  Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Title="Yêu Thích" Route="wishlist" Icon="heart.png" ContentTemplate="{DataTemplate local:WishlistPage}"/>
+        <ShellContent Title="Giỏ hàng" Route="cart"  Icon="shoppingcart.png" ContentTemplate="{DataTemplate local:CartPage}" />
+        <ShellContent Title="Tài khoản" Route="user"  Icon="user.png" ContentTemplate="{DataTemplate local:UserPage}"/>
     </TabBar>
 
     <!--

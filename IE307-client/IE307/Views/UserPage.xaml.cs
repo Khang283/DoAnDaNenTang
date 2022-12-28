@@ -18,17 +18,30 @@ namespace IE307.Views
         public UserPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            /*session
+                circleci*/
+            //BindingContext = this;
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lb_Username.Text = Application.Current.Properties["username"].ToString();
+            lb_Email.Text = Application.Current.Properties["email"].ToString();
         }
 
         private void editProfile_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new EditProfilePage());
         }
-
+        private void ChangePassword_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ChangePasswordPage());
+        }
         private void btnLogout_clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            Shell.Current.GoToAsync("//login");
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IE307.Views.EditProfilePage">
+             x:Class="IE307.Views.EditProfilePage"
+             Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <ScrollView>
             <Grid HorizontalOptions="FillAndExpand"
@@ -42,7 +43,8 @@
                 <Entry Grid.Row="3"
                        Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Username"></Entry>
                 <Label Grid.Row="4"
                        Grid.ColumnSpan="2"
                        Text="Email"
@@ -52,17 +54,20 @@
                 <Entry Grid.Row="5"
                        Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Email"></Entry>
                 <Label Grid.Row="6"
                        Grid.ColumnSpan="2"
                        Text="Địa chỉ"
                        TextColor="Black"
                        TextTransform="Uppercase"
-                       HorizontalOptions="StartAndExpand"></Label>
+                       HorizontalOptions="StartAndExpand"
+                       ></Label>
                 <Entry Grid.Row="7"
                        Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Address"></Entry>
                 <Label Grid.Row="8"
                        Grid.ColumnSpan="2"
                        Text="Số điện thoại"
@@ -72,7 +77,8 @@
                 <Entry Grid.Row="9"
                        Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"></Entry>
+                       VerticalOptions="FillAndExpand"
+                       x:Name="ent_Phone"></Entry>
                 <Button Grid.Row="10"
                         Grid.Column="0"
                         Text="Hủy"
@@ -86,7 +92,9 @@
                         FontAttributes="Bold"
                         CornerRadius="10"
                         HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"></Button>
+                        VerticalOptions="CenterAndExpand"
+                        x:Name="btn_UpdateInfo"
+                        Clicked="btn_UpdateInfo_Clicked"></Button>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

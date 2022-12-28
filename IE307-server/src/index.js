@@ -7,6 +7,13 @@ const PORT=5001;
 const db=require('./models/connection');
 const routes=require('./routes/index');
 
+//FOR USING JSON
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+//BODY PARSER
+app.use(bodyParser.json());
+
 //MORGAN
 app.use(morgan('combined'));
 
