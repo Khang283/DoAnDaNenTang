@@ -60,6 +60,7 @@ namespace IE307.Models
         public long totalPrice { get; set; }
         [BsonElement("items")]
         public List<CartItem> items { get; set; }
+        public Boolean deleted { get; set; }
 
         [BsonElement("createdAt")]
         [BsonRepresentation(BsonType.DateTime)]

@@ -47,7 +47,10 @@
                                                             HorizontalOptions="Center"
                                                             Text="-"
                                                             Background="lightgray"
-                                                            TextColor="Black"></Button>
+                                                            TextColor="Black"
+                                                            x:Name="btn_ReduceItem"
+                                                            Clicked="btn_ReduceItem_Clicked"
+                                                            CommandParameter="{Binding item.ProductId}"></Button>
                                                     <StackLayout HeightRequest="40"
                                                                  VerticalOptions="FillAndExpand"
                                                                  WidthRequest="40">
@@ -56,8 +59,8 @@
                                                                Text="{Binding quantity}"
                                                                TextColor="Black"
                                                                VerticalOptions="CenterAndExpand"
-                                                               VerticalTextAlignment="Center">
-                                                        </Label>
+                                                               VerticalTextAlignment="Center"
+                                                               ></Label>
                                                     </StackLayout>
                                                     <Button HeightRequest="40"
                                                             VerticalOptions="FillAndExpand"
@@ -66,7 +69,10 @@
                                                             HorizontalOptions="Center"
                                                             Text="+"
                                                             Background="lightgray"
-                                                            TextColor="Black"></Button>
+                                                            TextColor="Black"
+                                                            x:Name="btn_IncreaseItem"
+                                                            Clicked="btn_IncreaseItem_Clicked"
+                                                            CommandParameter="{Binding item.ProductId}"></Button>
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
@@ -79,7 +85,8 @@
                                                    WidthRequest="30">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer x:Name="Delete"
-                                                                          Tapped="Delete_Tapped"></TapGestureRecognizer>
+                                                                          Tapped="Delete_Tapped"
+                                                                          CommandParameter="{Binding item.ProductId}"></TapGestureRecognizer>
                                                 </Image.GestureRecognizers>
                                             </Image>
                                         </StackLayout>

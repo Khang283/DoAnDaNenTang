@@ -80,7 +80,9 @@
                         TextColor="White"
                         Text="Thêm vào giỏ hàng"
                         HeightRequest="50"
-                        WidthRequest="333">
+                        WidthRequest="333"
+                        x:Name="btn_AddToCart"
+                        Clicked="btn_AddToCart_Clicked">
                 </Button>
             </Grid>
         </StackLayout>

@@ -58,7 +58,7 @@ class CartController{
                                 })
                             }
                             else if(!newCart){
-                                Cart.findByIdAndUpdate(cartID,
+                                Cart.findOneAndUpdate({_id: cartID},
                                     {$push: {items: sp}, 
                                      $inc: {
                                         totalPrice: giaTien,
@@ -209,6 +209,9 @@ class CartController{
                             itemQuanity=sp.quantity;
                         }
                     });
+                    if(itemQuanity==1){
+                        return res.status(406).send("Không thể giảm tiếp sản phẩm");
+                    }
                     Cart.findOneAndUpdate({_id: cartID, items: {$elemMatch: {item: product}}},
                         {$inc: {totalPrice: -product.price, totalQuantity: -1, 'items.$.quantity': -1, 'items.$.price': -product.price}}
                         ,(err,gioHang)=>{
@@ -237,5 +240,4 @@ class CartController{
     }
 }
 
-module.exports = new CartController();
 module.exports = new CartController();
