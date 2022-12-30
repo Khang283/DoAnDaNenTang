@@ -131,7 +131,7 @@
 
             <!--  thêm vào giỏ hàng / nút like -->
             <Grid BackgroundColor="White"
-                  HeightRequest="90"
+                  HeightRequest="100"
                   RowDefinitions="*"
                   VerticalOptions="Center"
                   ColumnDefinitions="Auto,*">
@@ -139,16 +139,16 @@
                         Grid.Column="0"
                         VerticalOptions="Center"
                         BorderWidth="2"
-                        HeightRequest="60"
+                        HeightRequest="55"
                         CornerRadius="10"
-                        WidthRequest="60"
+                        WidthRequest="55"
                         BackgroundColor="LightGray"
                         ImageSource="BlackHeart" />
                 <Button Margin="0,0,10,6"
                         Grid.Column="1"
                         CornerRadius="20"
                         VerticalOptions="Center"
-                        HeightRequest="60"
+                        HeightRequest="55"
                         FontAttributes="Bold"
                         Text="Thêm vào giỏ hàng" />
             </Grid>
