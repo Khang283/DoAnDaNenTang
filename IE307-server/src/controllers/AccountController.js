@@ -2,6 +2,33 @@ const Account = require('../models/Account');
 
 class AccountController{
 
+    //[PUT] account/password
+    ChangePassword(req, res){
+        const userID=req.body.userID;
+        const oldPassword=req.body.oldPassword;
+        const newPassword=req.body.newPassword;
+        Account.findById(userID,(err, account)=>{
+            if(account){
+                if(account.password==oldPassword){
+                    account.update({password: newPassword},(err,tk)=>{
+                        if(tk){
+                            return res.status(200).send("Đổi mật khẩu thành công");
+                        }
+                        else{
+                            return res.status(500).send("Đã xảy ra lỗi");
+                        }
+                    });
+                }
+                else{
+                    return res.status(400).send("Mật khẩu cũ không chính xác");
+                }
+            }
+            else{
+                return res.status(404).send("Không tìm thấy tài khoản");
+            }
+        })
+    }
+
     //[PUT] account/update
     update(req, res){
         const userId=req.body.userID;

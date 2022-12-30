@@ -5,85 +5,154 @@
              Shell.TabBarIsVisible="False">
     <ContentPage.Content>
        
-            <!--  Body  -->
         <StackLayout>
-            <ScrollView x:Name="SV_ProductDetail">
-                <StackLayout>
-                    <Image Aspect="AspectFit"
-                           HeightRequest="300"
-                           Source="rings.png" />
-                    <StackLayout>
-                        <StackLayout Margin="15,0,15,0">
-                            <StackLayout>
-                                <Label FontAttributes="Bold"
-                                       FontSize="26"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="{Binding name}"
-                                       TextColor="Black"
-                                       VerticalTextAlignment="Center">
-                                </Label>
-                                <Label FontSize="20"
-                                       Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                       TextColor="OrangeRed"
-                                       VerticalTextAlignment="Center"
-                                       HorizontalOptions="StartAndExpand">
-                                </Label>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label FontAttributes="Bold"
-                                       FontSize="18"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="Mô tả"
-                                       TextColor="Black"
-                                       VerticalTextAlignment="Center">
-                                </Label>
-                                <Label FontSize="14"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="{Binding description}"
-                                       TextColor="Black"
-                                       VerticalTextAlignment="Center">
-                                </Label>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
             
+            <ScrollView x:Name="SV_ProductDetail">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Image Aspect="AspectFit"
+                               HeightRequest="300"
+                               Source="{Binding image}" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Frame HasShadow="False"
+                               BackgroundColor="#fafafa">
+                            <StackLayout>
+                                <Frame HasShadow="False"
+                                       BackgroundColor="white"
+                                       Margin="-13,-13,-13,13">
+                                    <StackLayout>
+                                        <Label Text="{Binding name}"
+                                               TextColor="black"
+                                               FontSize="22"
+                                               FontAttributes="Bold">
+                                        </Label>
+
+                                        <Label FontSize="20"
+                                               Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                               TextColor="OrangeRed">
+                                        </Label>
+
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button Grid.Column="0"
+                                                    BackgroundColor="White"
+                                                    ImageSource="star.png" />
+                                            <Button Grid.Column="1"
+                                                    BackgroundColor="White"
+                                                    ImageSource="star.png" />
+                                            <Button Grid.Column="2"
+                                                    BackgroundColor="White"
+                                                    ImageSource="star.png" />
+                                            <Button Grid.Column="3"
+                                                    BackgroundColor="White"
+                                                    ImageSource="star.png" />
+                                            <Button Grid.Column="4"
+                                                    BackgroundColor="White"
+                                                    ImageSource="star.png" />
+                                            <Label Margin="10,0,0,0"
+                                                   Grid.Column="5"
+                                                   Text="5.0 | (69)"
+                                                   TextColor="Black"
+                                                   FontSize="20"
+                                                   VerticalOptions="Center" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame HasShadow="False"
+                                       BackgroundColor="white"
+                                       Margin="-13,-13,-13,13">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold"
+                                               FontSize="18"
+                                               HorizontalOptions="StartAndExpand"
+                                               Text="Mô tả"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Row="0">
+                                        </Label>
+                                        <Label TextColor="Black"
+                                               Opacity="0.7"
+                                               Text="{Binding description}"
+                                               FontSize="16"
+                                               Grid.Row="1" />
+                                    </Grid>
+                                </Frame>
+                                <Frame HasShadow="False"
+                                       BackgroundColor="white"
+                                       Margin="-13,-13,-13,0    ">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold"
+                                               FontSize="18"
+                                               HorizontalOptions="StartAndExpand"
+                                               Text="Chi tiết sản phẩm"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Row="0" >
+                                        </Label>
+                                        <Label TextColor="Black"
+                                               Opacity="0.7"
+                                               Text="{Binding type, StringFormat='Loại: {0:F2}'}"
+                                               FontSize="16"
+                                               Grid.Row="1" />
+                                        <Label TextColor="Black"
+                                               Opacity="0.7"
+                                               Text="{Binding material, StringFormat='Nguyên liệu: {0:F2}'}"
+                                               FontSize="16"
+                                               Grid.Row="2" />
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+
             <!--  thêm vào giỏ hàng / nút like -->
             <Grid BackgroundColor="White"
-                  HeightRequest="60"
-                  HorizontalOptions="FillAndExpand"
-                  VerticalOptions="EndAndExpand">
-
-                <StackLayout  Margin="10,0,0,0"
-                             HorizontalOptions="Start"
-                             VerticalOptions="Center"
-                             HeightRequest="50"
-                             WidthRequest="50"
-                             IsClippedToBounds="False">
-                    <Image Aspect="AspectFit"
-                           HorizontalOptions="CenterAndExpand"
-                           Source="heart.png"
-                           VerticalOptions="CenterAndExpand">
-                        <!--<Image.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
-                                                  Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
-                        </Image.GestureRecognizers>-->
-                    </Image>
-                </StackLayout>
-
-                <Button Margin="0,0,10,0"
-                        CornerRadius="5"
-                        HorizontalOptions="End"
+                  HeightRequest="100"
+                  RowDefinitions="*"
+                  VerticalOptions="Center"
+                  ColumnDefinitions="Auto,*">
+                <Button Margin="10,0,0,6"
+                        Grid.Column="0"
                         VerticalOptions="Center"
-                        FontSize="14"
-                        TextColor="White"
-                        Text="Thêm vào giỏ hàng"
-                        HeightRequest="50"
-                        WidthRequest="333"
+                        BorderWidth="2"
+                        HeightRequest="55"
+                        CornerRadius="10"
+                        WidthRequest="55"
+                        BackgroundColor="LightGray"
+                        ImageSource="BlackHeart" />
+                <Button Margin="0,0,10,6"
+                        Grid.Column="1"
+                        CornerRadius="20"
+                        VerticalOptions="Center"
+                        HeightRequest="55"
+                        FontAttributes="Bold"
+                        Text="Thêm vào giỏ hàng" 
                         x:Name="btn_AddToCart"
-                        Clicked="btn_AddToCart_Clicked">
-                </Button>
+                        Clicked="btn_AddToCart_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
