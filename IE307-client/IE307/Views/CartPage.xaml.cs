@@ -58,5 +58,10 @@ namespace IE307.Views
             }
 
         }
+
+        private void checkout_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CheckoutPage());
+        }
     }
 }

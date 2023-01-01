@@ -32,7 +32,7 @@
                                             <Label FontSize="16"
                                                    HorizontalOptions="StartAndExpand"
                                                    Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                   TextColor="DeepSkyBlue">
+                                                   TextColor="OrangeRed">
                                             </Label>
                                             <Frame Margin="0"
                                                    Padding="0"
@@ -116,7 +116,7 @@
                                        FontSize="12"
                                        HorizontalOptions="Center"
                                        Text="TỔNG TIỀN"
-                                       TextColor="Gray"
+                                       TextColor="Black"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
@@ -124,7 +124,7 @@
                                        FontSize="18"
                                        HorizontalOptions="Center"
                                        x:Name="lb_TotalPrice"
-                                       TextColor="DeepSkyBlue"
+                                       TextColor="OrangeRed"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
@@ -134,7 +134,8 @@
                                     Text="THANH TOÁN"
                                     WidthRequest="100"
                                     HorizontalOptions="EndAndExpand"
-                                    VerticalOptions="CenterAndExpand">
+                                    VerticalOptions="CenterAndExpand"
+                                    Clicked="checkout_Clicked">
                             </Button>
                         </StackLayout>
                     </Frame>
