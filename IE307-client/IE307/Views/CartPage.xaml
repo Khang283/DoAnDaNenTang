@@ -15,7 +15,7 @@
                            Text="Thông tin giỏ hàng"
                            TextColor="#002d5c">
                     </Label>
-                    <StackLayout >
+                    <StackLayout>
                         <CollectionView x:Name="cv_CartList">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
@@ -42,23 +42,20 @@
                                                            Text="{Binding price, StringFormat='{0:F2} đ'}"
                                                            TextColor="#ccac00">
                                                     </Label>
-                                                    <Frame Margin="0"
-                                                           Padding="0"
-                                                           BackgroundColor="WhiteSmoke"
-                                                           CornerRadius="8"
-                                                           HasShadow="False">
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <Button HeightRequest="40"
-                                                                    VerticalOptions="FillAndExpand"
-                                                                    WidthRequest="40"
-                                                                    FontSize="16"
-                                                                    HorizontalOptions="Center"
-                                                                    Text="-"
-                                                                    Background="lightgray"
-                                                                    TextColor="Black"
-                                                                    x:Name="btn_ReduceItem"
-                                                                    Clicked="btn_ReduceItem_Clicked"
-                                                                    CommandParameter="{Binding item.ProductId}"></Button>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Button HeightRequest="40"
+                                                                VerticalOptions="FillAndExpand"
+                                                                WidthRequest="40"
+                                                                FontSize="16"
+                                                                HorizontalOptions="Center"
+                                                                Text="-"
+                                                                Background="lightgray"
+                                                                TextColor="Black"
+                                                                x:Name="btn_ReduceItem"
+                                                                Clicked="btn_ReduceItem_Clicked"
+                                                                CommandParameter="{Binding item.ProductId}"></Button>
+                                                        <Frame Padding="0"
+                                                               BackgroundColor="WhiteSmoke">
                                                             <StackLayout HeightRequest="40"
                                                                          VerticalOptions="FillAndExpand"
                                                                          WidthRequest="40">
@@ -69,19 +66,19 @@
                                                                        VerticalOptions="CenterAndExpand"
                                                                        VerticalTextAlignment="Center"></Label>
                                                             </StackLayout>
-                                                            <Button HeightRequest="40"
-                                                                    VerticalOptions="FillAndExpand"
-                                                                    WidthRequest="40"
-                                                                    FontSize="16"
-                                                                    HorizontalOptions="Center"
-                                                                    Text="+"
-                                                                    Background="lightgray"
-                                                                    TextColor="Black"
-                                                                    x:Name="btn_IncreaseItem"
-                                                                    Clicked="btn_IncreaseItem_Clicked"
-                                                                    CommandParameter="{Binding item.ProductId}"></Button>
-                                                        </StackLayout>
-                                                    </Frame>
+                                                        </Frame>
+                                                        <Button HeightRequest="40"
+                                                                VerticalOptions="FillAndExpand"
+                                                                WidthRequest="40"
+                                                                FontSize="16"
+                                                                HorizontalOptions="Center"
+                                                                Text="+"
+                                                                Background="lightgray"
+                                                                TextColor="Black"
+                                                                x:Name="btn_IncreaseItem"
+                                                                Clicked="btn_IncreaseItem_Clicked"
+                                                                CommandParameter="{Binding item.ProductId}"></Button>
+                                                    </StackLayout>
                                                 </StackLayout>
                                                 <StackLayout Margin="10,0,0,0"
                                                              VerticalOptions="Center"
@@ -133,11 +130,13 @@
                                        HorizontalOptions="Center"
                                        Text="TỔNG TIỀN"
                                        TextColor="#002d5c"
+                                       FontAttributes="Bold"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
                                 <Label Margin="30,0,35,0"
                                        FontSize="18"
+                                       FontAttributes="Bold"
                                        HorizontalOptions="Center"
                                        x:Name="lb_TotalPrice"
                                        TextColor="#ccac00"

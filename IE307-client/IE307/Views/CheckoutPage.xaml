@@ -7,7 +7,6 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#fafafa">
-
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
@@ -71,7 +70,7 @@
                        BackgroundColor="white">
                     <StackLayout>
                         <Label FontAttributes="Bold"
-                               FontSize="18"
+                               FontSize="20"
                                Text="Thông tin giỏ hàng"
                                TextColor="#002d5c">
                         </Label>
@@ -134,7 +133,8 @@
                            BackgroundColor="white">
                         <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
                             <Label Text="Phương thức thanh toán"
-                                   FontSize="18"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
                                    TextColor="#002d5c" />
                             <RadioButton Content="COD" />
                             <RadioButton Content="Chuyển khoản" />
@@ -150,6 +150,7 @@
                             <StackLayout>
                                 <Label Margin="30,0,35,0"
                                        FontSize="12"
+                                       FontAttributes="Bold"
                                        HorizontalOptions="Center"
                                        Text="TỔNG TIỀN"
                                        TextColor="#002d5c"
