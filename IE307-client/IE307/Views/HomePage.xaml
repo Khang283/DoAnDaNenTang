@@ -42,124 +42,160 @@
                                     <StackLayout Margin="0,20,0,0"
                                                  HeightRequest="110"
                                                  Orientation="Horizontal">
-                                        <StackLayout Margin="0,0,10,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="rings.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Nhẫn"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="0,0,10,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="rings.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Nhẫn"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesRing"
+                                                                      Tapped="CategoriesRing_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
-                                        <StackLayout Margin="10,0,10,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="pendant.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Dây chuyền"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="10,0,10,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="pendant.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Dây chuyền"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesPendant"
+                                                                      Tapped="CategoriesPendant_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
-                                        <StackLayout Margin="10,0,10,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="earing.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Bông tai"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="10,0,10,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="earing.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Bông tai"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesEaring"
+                                                                      Tapped="CategoriesEaring_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
-                                        <StackLayout Margin="10,0,10,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="bracelet.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Vòng tay"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="10,0,10,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="bracelet.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Vòng tay"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesBracelet"
+                                                                      Tapped="CategoriesBracelet_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
-                                        <StackLayout Margin="10,0,10,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="watch.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Đồng hồ"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="10,0,10,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="watch.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Đồng hồ"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesWatch"
+                                                                      Tapped="CategoriesWatch_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
-                                        <StackLayout Margin="10,0,0,0">
-                                            <Frame Padding="0"
-                                                   CornerRadius="50"
-                                                   HeightRequest="80"
-                                                   WidthRequest="80"
-                                                   IsClippedToBounds="False">
-                                                <Image Margin="5"
-                                                       Aspect="AspectFit"
-                                                       HorizontalOptions="CenterAndExpand"
-                                                       Source="gift.png"
-                                                       VerticalOptions="CenterAndExpand" />
-                                            </Frame>
-                                            <Label FontSize="12"
-                                                   HorizontalOptions="Center"
-                                                   Text="Quà tặng"
-                                                   TextColor="Black">
-                                            </Label>
+                                        <StackLayout>
+                                            <StackLayout Margin="10,0,0,0">
+                                                <Frame Padding="0"
+                                                       CornerRadius="50"
+                                                       HeightRequest="80"
+                                                       WidthRequest="80"
+                                                       IsClippedToBounds="False">
+                                                    <Image Margin="5"
+                                                           Aspect="AspectFit"
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           Source="gift.png"
+                                                           VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                                <Label FontSize="12"
+                                                       HorizontalOptions="Center"
+                                                       Text="Quà tặng"
+                                                       TextColor="Black">
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="CategoriesGift"
+                                                                      Tapped="CategoriesGift_Tapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                         </StackLayout>
                                     </StackLayout>
                                 </ScrollView>
                             </StackLayout>
                         </StackLayout>
-                   
+
                         <!--bán chạy-->
                         <StackLayout Margin="0,10,0,10">
                             <StackLayout Orientation="Horizontal">
@@ -201,8 +237,7 @@
                                                                        Source="{Binding image}"
                                                                        WidthRequest="150" />
                                                             </Frame>
-                                                        </StackLayout>
-                                                        <StackLayout>
+
                                                             <Label FontSize="16"
                                                                    HorizontalOptions="Start"
                                                                    Text="{Binding name}"
@@ -211,6 +246,24 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
+                                                            <Grid>
+                                                                <Label FontSize="16"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="#ccac00"
+                                                                       VerticalOptions="End"
+                                                                       HorizontalOptions="Center">
+                                                                </Label>
+                                                                <!--<Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>-->
+                                                            </Grid>
                                                             <StackLayout Orientation="Horizontal">
                                                                 <Label Text="5"
                                                                        FontSize="16"
@@ -221,24 +274,6 @@
                                                                        HeightRequest="20"
                                                                        WidthRequest="20"></Image>
                                                             </StackLayout>
-                                                            <Grid>
-                                                                <Label FontSize="16"
-                                                                       HorizontalOptions="Start"
-                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
-                                                                       TextColor="OrangeRed"
-                                                                       VerticalOptions="End">
-                                                                </Label>
-                                                                <Image Source="heart.png"
-                                                                       HorizontalOptions="End"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="25"
-                                                                       WidthRequest="25">
-                                                                    <Image.GestureRecognizers>
-                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
-                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
-                                                                    </Image.GestureRecognizers>
-                                                                </Image>
-                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -299,6 +334,24 @@
                                                                    MaxLines="2"
                                                                    LineBreakMode="TailTruncation">
                                                             </Label>
+                                                            <Grid>
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Center"
+                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       TextColor="#ccac00"
+                                                                       VerticalOptions="End">
+                                                                </Label>
+                                                                <!--<Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>-->
+                                                            </Grid>
                                                             <StackLayout Orientation="Horizontal">
                                                                 <Label Text="5"
                                                                        FontSize="16"
@@ -309,24 +362,6 @@
                                                                        HeightRequest="20"
                                                                        WidthRequest="20"></Image>
                                                             </StackLayout>
-                                                            <Grid>
-                                                                <Label FontSize="16"
-                                                                       HorizontalOptions="Start"
-                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
-                                                                       TextColor="OrangeRed"
-                                                                       VerticalOptions="End">
-                                                                </Label>
-                                                                <Image Source="heart.png"
-                                                                       HorizontalOptions="End"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="25"
-                                                                       WidthRequest="25">
-                                                                    <Image.GestureRecognizers>
-                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
-                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
-                                                                    </Image.GestureRecognizers>
-                                                                </Image>
-                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>

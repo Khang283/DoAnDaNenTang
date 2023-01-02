@@ -34,7 +34,7 @@
 
                                         <Label FontSize="20"
                                                Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                               TextColor="OrangeRed">
+                                               TextColor="#ccac00">
                                         </Label>
 
                                         <Grid>
@@ -48,19 +48,19 @@
                                             </Grid.ColumnDefinitions>
                                             <Button Grid.Column="0"
                                                     BackgroundColor="White"
-                                                    ImageSource="star.png" />
+                                                    ImageSource="smallstar.png" />
                                             <Button Grid.Column="1"
                                                     BackgroundColor="White"
-                                                    ImageSource="star.png" />
+                                                    ImageSource="smallstar.png" />
                                             <Button Grid.Column="2"
                                                     BackgroundColor="White"
-                                                    ImageSource="star.png" />
+                                                    ImageSource="smallstar.png" />
                                             <Button Grid.Column="3"
                                                     BackgroundColor="White"
-                                                    ImageSource="star.png" />
+                                                    ImageSource="smallstar.png" />
                                             <Button Grid.Column="4"
                                                     BackgroundColor="White"
-                                                    ImageSource="star.png" />
+                                                    ImageSource="smallstar.png" />
                                             <Label Margin="10,0,0,0"
                                                    Grid.Column="5"
                                                    Text="5.0 | (69)"
@@ -130,23 +130,23 @@
             </ScrollView>
 
             <!--  thêm vào giỏ hàng / nút like -->
-            <Grid BackgroundColor="White"
-                  HeightRequest="100"
+            <Grid BackgroundColor="#f2f2f2"
+                  HeightRequest="111"
                   RowDefinitions="*"
                   VerticalOptions="Center"
                   ColumnDefinitions="Auto,*">
-                <Button Margin="10,0,0,6"
+                <Button Margin="10,5,0,5"
                         Grid.Column="0"
                         VerticalOptions="Center"
                         BorderWidth="2"
                         HeightRequest="55"
                         CornerRadius="10"
                         WidthRequest="55"
-                        BackgroundColor="LightGray"
-                        ImageSource="BlackHeart"
+                        BackgroundColor="white"
+                        ImageSource="BlackHeart.png"
                         x:Name="btn_Favorite"
                         Clicked="btn_Favorite_Clicked"/>
-                <Button Margin="0,0,10,6"
+                <Button Margin="0,5,10,5"
                         Grid.Column="1"
                         CornerRadius="20"
                         VerticalOptions="Center"
@@ -154,7 +154,8 @@
                         FontAttributes="Bold"
                         Text="Thêm vào giỏ hàng" 
                         x:Name="btn_AddToCart"
-                        Clicked="btn_AddToCart_Clicked"/>
+                        Clicked="btn_AddToCart_Clicked"
+                        BackgroundColor="#ccac00"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

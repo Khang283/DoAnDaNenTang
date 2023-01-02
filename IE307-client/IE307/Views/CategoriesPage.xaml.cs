@@ -37,12 +37,12 @@ namespace IE307.Views
             }
         }
 
-        int favouriteTapCount = 0;
-        private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
-        {
-            favouriteTapCount++;
-            Image img = sender as Image;
-            img.Source = favouriteTapCount % 2 == 0 ? "heart.png" : "redheart.png";
-        }
+        //int favouriteTapCount = 0;
+        //private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
+        //{
+        //    favouriteTapCount++;
+        //    Image img = sender as Image;
+        //    img.Source = favouriteTapCount % 2 == 0 ? "heart.png" : "redheart.png";
+        //}
     }
 }

@@ -15,7 +15,7 @@ namespace IE307.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
-        int favouriteTapCount = 0;
+        //int favouriteTapCount = 0;
         public HomePage()
         {
             InitializeComponent();
@@ -50,11 +50,44 @@ namespace IE307.Views
             Product product = CV_Recommend.SelectedItem as Product;
             Navigation.PushAsync(new ProductsDetailPage(product));
         }
-        private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
+
+        private void CategoriesRing_Tapped(object sender, EventArgs e)
         {
-            favouriteTapCount++;
-            Image img = sender as Image;
-            img.Source = favouriteTapCount % 2 == 0 ? "heart.png" : "redheart.png";
+            Navigation.PushAsync(new CategoriesPage());
         }
+
+        private void CategoriesPendant_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private void CategoriesEaring_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private void CategoriesBracelet_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CategoriesPage());
+        }
+
+        private void CategoriesWatch_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CategoriesPage()); 
+        }
+
+        private void CategoriesGift_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CategoriesPage());
+        }
+
+
+
+        //private void ImgAddToWishlist_Tapped(object sender, EventArgs e)
+        //{
+        //    favouriteTapCount++;
+        //    Image img = sender as Image;
+        //    img.Source = favouriteTapCount % 2 == 0 ? "heart.png" : "redheart.png";
+        //}
     }
 }

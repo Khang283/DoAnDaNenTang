@@ -199,6 +199,7 @@
 
                     <StackLayout Margin="50">
                         <Button Text="Đăng xuất"
+                                BackgroundColor="#ccac00"
                                 Clicked="btnLogout_clicked"/>
                     </StackLayout>
                 </StackLayout>

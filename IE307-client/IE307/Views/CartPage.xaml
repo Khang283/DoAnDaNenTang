@@ -32,7 +32,7 @@
                                             <Label FontSize="16"
                                                    HorizontalOptions="StartAndExpand"
                                                    Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                   TextColor="OrangeRed">
+                                                   TextColor="#ccac00">
                                             </Label>
                                             <Frame Margin="0"
                                                    Padding="0"
@@ -131,7 +131,7 @@
                                        FontSize="18"
                                        HorizontalOptions="Center"
                                        x:Name="lb_TotalPrice"
-                                       TextColor="OrangeRed"
+                                       TextColor="#ccac00"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
@@ -139,10 +139,11 @@
                             <Button Margin="0,0,30,0"
                                     Padding="0"
                                     Text="THANH TOÁN"
+                                    BackgroundColor="#ccac00"
                                     WidthRequest="100"
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="CenterAndExpand"
-                                    Clicked="checkout_Clicked">
+                                    Clicked="btn_Checkout_Clicked">
                             </Button>
                         </StackLayout>
                     </Frame>

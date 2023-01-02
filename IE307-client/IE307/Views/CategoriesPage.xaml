@@ -10,7 +10,7 @@
                     <Label FontAttributes="Bold"
                            FontSize="18"
                            HorizontalOptions="StartAndExpand"
-                           Text="Nhẫn"
+                           Text="{Binding }"
                            TextColor="Black">
                     </Label>
                 </StackLayout>
@@ -47,8 +47,7 @@
                                                            Source="{Binding image}"
                                                            WidthRequest="150" />
                                                 </Frame>
-                                            </StackLayout>
-                                            <StackLayout>
+
                                                 <Label FontSize="16"
                                                        HorizontalOptions="Start"
                                                        Text="{Binding name}"
@@ -59,22 +58,32 @@
                                                 </Label>
                                                 <Grid>
                                                     <Label FontSize="16"
-                                                           HorizontalOptions="Start"
+                                                           HorizontalOptions="Center"
                                                            Text="{Binding price,StringFormat='{0:F2} đ'}"
-                                                           TextColor="OrangeRed"
+                                                           TextColor="#ccac00"
                                                            VerticalOptions="End">
                                                     </Label>
-                                                    <Image Source="heart.png"
-                                                           HorizontalOptions="End"
-                                                           Aspect="AspectFill"
-                                                           HeightRequest="25"
-                                                           WidthRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
-                                                                                  Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
+                                                    <!--<Image Source="heart.png"
+                                                                       HorizontalOptions="End"
+                                                                       Aspect="AspectFill"
+                                                                       HeightRequest="25"
+                                                                       WidthRequest="25">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer x:Name="ImgAddToWishlist_Tapped"
+                                                                                              Tapped="ImgAddToWishlist_Tapped"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>-->
                                                 </Grid>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="5"
+                                                           FontSize="16"
+                                                           TextColor="Black" />
+                                                    <Image Source="star.png"
+                                                           VerticalOptions="Center"
+                                                           Aspect="AspectFill"
+                                                           HeightRequest="20"
+                                                           WidthRequest="20"></Image>
+                                                </StackLayout>
                                             </StackLayout>
                                         </StackLayout>
                                     </Frame>
