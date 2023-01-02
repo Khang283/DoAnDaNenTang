@@ -32,6 +32,18 @@ const Cart = new Schema({
         type: Number,
         default: 0
     },
+    receiver: {
+        type: String,
+    },
+    phone: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    pay: {
+        type: String
+    },
     items:[{
         item: ProductSchema,
         quantity: {

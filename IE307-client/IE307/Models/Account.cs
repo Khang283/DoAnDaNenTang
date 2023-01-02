@@ -7,6 +7,15 @@ using Xamarin.Forms;
 
 namespace IE307.Models
 {
+   
+    public class Favorite
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string itemId { get; set; }
+        [BsonElement("item")]
+        public Product item { get; set; }
+    }
     public class Account
     {
         [BsonId]
@@ -18,7 +27,8 @@ namespace IE307.Models
         public string email { get; set; }   
         public string phone { get; set; }
         public string address { get; set; }
-
+        [BsonElement("favorite")]
+        public List<Favorite> favorite { get; set; }   
         [BsonElement("createdAt")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime createdAt { get; set; }

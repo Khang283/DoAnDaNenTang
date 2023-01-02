@@ -15,6 +15,7 @@ namespace IE307.Views
     public partial class ProductsDetailPage : ContentPage
     {
         public Product sp;
+        public bool isFavorited;
         public ProductsDetailPage()
         {
             InitializeComponent();
@@ -23,9 +24,33 @@ namespace IE307.Views
         public ProductsDetailPage(Product product)
         {
             InitializeComponent();
-            sp = product;   
+            sp = product;
             Title = product.name;
             SV_ProductDetail.BindingContext = product;
+            CheckFavorite();
+        }
+
+
+        private async void CheckFavorite()
+        {
+            var userID = Application.Current.Properties["userID"].ToString();
+            var productID = sp.ProductId;
+            Dictionary<string, object> data = new Dictionary<string, object>();
+            data.Add("userID", userID);
+            data.Add("productID", productID);
+            StringContent content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+            HttpClient client = new HttpClient();
+            var result = await client.PostAsync("http://" + Utility.API_Endpoint + ":5001/products/checkfavorite", content);
+            var response = result.StatusCode.ToString();
+            if (response == "OK")
+            {
+                isFavorited= true;
+                btn_Favorite.ImageSource = "redheart.png";
+            }
+            else
+            {
+                isFavorited = false;
+            }
         }
 
         private async void btn_AddToCart_Clicked(object sender, EventArgs e)
@@ -50,6 +75,54 @@ namespace IE307.Views
             else
             {
                 await DisplayAlert("Thông báo", "Đã xảy ra lỗi", "OK");
+            }
+        }
+
+        private async void btn_Favorite_Clicked(object sender, EventArgs e)
+        {
+            if (!isFavorited)
+            {
+                var userID = Application.Current.Properties["userID"].ToString();
+                var productID = sp.ProductId;
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("userID", userID);
+                data.Add("productID", productID);
+                StringContent content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+                HttpClient client = new HttpClient();
+                var result = await client.PostAsync("http://" + Utility.API_Endpoint + ":5001/products/addToFavorite", content);
+                var response = result.StatusCode.ToString();
+                if (response == "OK")
+                {
+                    btn_Favorite.ImageSource = "redheart.png";
+                    isFavorited = !isFavorited;
+                    await DisplayAlert("Thông báo", "Đã thêm vào yêu thích !", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Thông báo", "Đã xảy ra lỗi !", "OK");
+                }
+            }
+            else
+            {
+                var userID = Application.Current.Properties["userID"].ToString();
+                var productID = sp.ProductId;
+                Dictionary<string, object> data = new Dictionary<string, object>();
+                data.Add("userID", userID);
+                data.Add("productID", productID);
+                StringContent reqdata = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+                HttpClient client = new HttpClient();
+                var result=await client.PutAsync("http://"+Utility.API_Endpoint+":5001/products/removefavorite",reqdata);
+                var response = result.StatusCode.ToString();
+                if (response == "OK")
+                {
+                    isFavorited = !isFavorited;
+                    btn_Favorite.ImageSource = "BlackHeart";
+                    await DisplayAlert("Thông báo", "Đã loại khỏi danh sách yêu thích", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Thông báo", "Đã xảy ra lỗi !", "OK");
+                }
             }
         }
 

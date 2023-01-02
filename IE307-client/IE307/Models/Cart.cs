@@ -19,6 +19,7 @@ namespace IE307.Models
         public string price { get; set; }
         public string type { get; set; }
         public string material { get; set; }
+        public Boolean deleted { get; set; }
 
         [BsonElement("createdAt")]
         [BsonRepresentation(BsonType.DateTime)]
@@ -58,6 +59,15 @@ namespace IE307.Models
         public int totalquantity { get; set; }
         [BsonElement("totalPrice")]
         public long totalPrice { get; set; }
+        [BsonElement("receiver")]
+        public string receiver { get; set; }
+        [BsonElement("phone")]
+        public string phone { get; set; }
+        [BsonElement("address")]
+        public string address { get; set; }
+        [BsonElement("pay")]
+        public string pay { get; set; }
+
         [BsonElement("items")]
         public List<CartItem> items { get; set; }
         public Boolean deleted { get; set; }

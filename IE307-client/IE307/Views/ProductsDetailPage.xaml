@@ -143,7 +143,9 @@
                         CornerRadius="10"
                         WidthRequest="55"
                         BackgroundColor="LightGray"
-                        ImageSource="BlackHeart" />
+                        ImageSource="BlackHeart"
+                        x:Name="btn_Favorite"
+                        Clicked="btn_Favorite_Clicked"/>
                 <Button Margin="0,0,10,6"
                         Grid.Column="1"
                         CornerRadius="20"
