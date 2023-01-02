@@ -22,7 +22,7 @@
                                    FontSize="20"
                                    HorizontalOptions="StartAndExpand"
                                    Text="Thông tin nhận hàng"
-                                   TextColor="Black"
+                                   TextColor="#002d5c"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="0">
                             </Label>
@@ -67,66 +67,75 @@
                     </Frame>
                 </StackLayout>
 
-                <CollectionView x:Name="cv_CartList">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Frame Margin="0,8,0,8"
-                                       Padding="0"
-                                       BackgroundColor="White"
-                                       HasShadow="True">
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout Margin="0,0,15,0">
-                                            <Image Aspect="AspectFit"
-                                                   HeightRequest="120"
-                                                   Source="{Binding item.image}"
-                                                   WidthRequest="120" />
-                                        </StackLayout>
-                                        <StackLayout Margin="15,0,0,0">
-                                            <Label FontSize="16"
-                                                   HorizontalOptions="StartAndExpand"
-                                                   Text="{Binding item.name}"
-                                                   TextColor="Black">
-                                            </Label>
-                                            <Label FontSize="16"
-                                                   HorizontalOptions="StartAndExpand"
-                                                   Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                   TextColor="#ccac00">
-                                            </Label>
-                                            <Frame Margin="0"
-                                                   Padding="0"
-                                                   BackgroundColor="WhiteSmoke"
-                                                   CornerRadius="8"
-                                                   HasShadow="False">
-                                                <StackLayout Orientation="Horizontal">
-                                                    <StackLayout HeightRequest="40"
-                                                                 VerticalOptions="FillAndExpand"
-                                                                 WidthRequest="40">
-                                                        <Label FontSize="16"
-                                                               HorizontalOptions="Center"
-                                                               Text="{Binding quantity}"
-                                                               TextColor="Black"
-                                                               VerticalOptions="CenterAndExpand"
-                                                               VerticalTextAlignment="Center">
-                                                        </Label>
-                                                    </StackLayout>
+                <Frame HasShadow="False"
+                       BackgroundColor="white">
+                    <StackLayout>
+                        <Label FontAttributes="Bold"
+                               FontSize="18"
+                               Text="Thông tin giỏ hàng"
+                               TextColor="#002d5c">
+                        </Label>
+                        <CollectionView x:Name="cv_CartList">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Frame Margin="0,8,0,8"
+                                               Padding="0"
+                                               BackgroundColor="White"
+                                               HasShadow="True">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout Margin="0,0,15,0">
+                                                    <Image Aspect="AspectFit"
+                                                           HeightRequest="120"
+                                                           Source="{Binding item.image}"
+                                                           WidthRequest="120" />
                                                 </StackLayout>
-                                            </Frame>
-                                        </StackLayout>
+                                                <StackLayout Margin="15,0,0,0">
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding item.name}"
+                                                           TextColor="Black">
+                                                    </Label>
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                                           TextColor="#ccac00">
+                                                    </Label>
+                                                    <Frame Margin="0"
+                                                           Padding="0"
+                                                           BackgroundColor="WhiteSmoke"
+                                                           CornerRadius="8"
+                                                           HasShadow="False">
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <StackLayout HeightRequest="40"
+                                                                         VerticalOptions="FillAndExpand"
+                                                                         WidthRequest="40">
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Center"
+                                                                       Text="{Binding quantity}"
+                                                                       TextColor="Black"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       VerticalTextAlignment="Center">
+                                                                </Label>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
                                     </StackLayout>
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
                         <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
                             <Label Text="Phương thức thanh toán"
                                    FontSize="18"
-                                   TextColor="Black" />
+                                   TextColor="#002d5c" />
                             <RadioButton Content="COD" />
                             <RadioButton Content="Chuyển khoản" />
                         </StackLayout>
@@ -143,7 +152,7 @@
                                        FontSize="12"
                                        HorizontalOptions="Center"
                                        Text="TỔNG TIỀN"
-                                       TextColor="Black"
+                                       TextColor="#002d5c"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>

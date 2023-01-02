@@ -13,7 +13,7 @@
                            FontSize="18"
                            HorizontalOptions="StartAndExpand"
                            Text="Sản phẩm yêu thích"
-                           TextColor="Black">
+                           TextColor="#002d5c">
                     </Label>
                 </StackLayout>
                 <StackLayout>

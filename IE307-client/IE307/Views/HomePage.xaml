@@ -36,7 +36,7 @@
                                 <Label FontAttributes="Bold"
                                        FontSize="18"
                                        Text="Danh mục sản phẩm"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                                 <ScrollView Orientation="Horizontal">
                                     <StackLayout Margin="0,20,0,0"
@@ -203,7 +203,7 @@
                                        FontSize="18"
                                        HorizontalOptions="StartAndExpand"
                                        Text="Sản phẩm bán chạy"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                             </StackLayout>
                             <StackLayout>
@@ -291,7 +291,7 @@
                                        FontSize="18"
                                        HorizontalOptions="StartAndExpand"
                                        Text="Đề xuất"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                             </StackLayout>
                             <StackLayout>
