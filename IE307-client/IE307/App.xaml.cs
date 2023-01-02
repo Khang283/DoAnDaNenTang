@@ -4,6 +4,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Asul.ttf", Alias = "Asul")]
 namespace IE307
 {
     public partial class App : Application

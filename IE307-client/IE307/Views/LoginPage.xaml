@@ -34,6 +34,7 @@
                        FontAttributes="Bold"
                        TextColor="Black"
                        TextTransform="Uppercase"
+                       FontFamily="Asul"
                        HorizontalOptions="CenterAndExpand"></Label>
                 <BoxView Grid.Row="1"></BoxView>
                 <Label Grid.Row="2"
