@@ -2,7 +2,7 @@ const Product=require('../models/Products');
 const Account=require('../models/Account');
 class ProductsController{
 
-    //[GET] /product
+    //[GET] /products
     index(req,res){
         let random=Math.random()*10
         Product.find().skip(random).limit(8).lean().exec((err,products)=>{
@@ -14,6 +14,8 @@ class ProductsController{
             }
         })
     }
+
+    
 
     //[POST] /product/addToFavorite
     async AddToFavorite(req, res){
@@ -105,6 +107,22 @@ class ProductsController{
         else{
             return res.status(400).send("Sản phẩm không tồn tại");
         }
+    }
+
+    //[GET] /products/?category/?page
+    Category(req, res){
+        const page=req.params.page || 1;
+        const category=req.params.category;
+        let limit=8;
+        console.log(category, page);
+        Product.find({type: category}).skip(limit*page-limit).limit(8).lean().exec((err,product)=>{
+            if(product){
+                return res.status(200).json(product);
+            }
+            else{
+                return res.status(404).send(err.message);
+            }
+        });
     }
 }
 
