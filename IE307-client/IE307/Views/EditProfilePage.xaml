@@ -23,12 +23,11 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
+                <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 <Label Grid.Row="0"
-                       Grid.ColumnSpan="2"
                        Text="Thay đổi thông tin"
                        FontSize="30"
                        FontAttributes="Bold"
@@ -36,62 +35,54 @@
                        TextTransform="Uppercase"
                        HorizontalOptions="CenterAndExpand"></Label>
                 <Label Grid.Row="2"
-                       Grid.ColumnSpan="2"
                        Text="Tên"
                        TextColor="Black"
                        TextTransform="Uppercase"
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="3"
-                       Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        x:Name="ent_Username"></Entry>
                 <Label Grid.Row="4"
-                       Grid.ColumnSpan="2"
                        Text="Email"
                        TextColor="Black"
                        TextTransform="Uppercase"
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="5"
-                       Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        x:Name="ent_Email"></Entry>
                 <Label Grid.Row="6"
-                       Grid.ColumnSpan="2"
                        Text="Địa chỉ"
                        TextColor="Black"
                        TextTransform="Uppercase"
                        HorizontalOptions="StartAndExpand"
                        ></Label>
                 <Entry Grid.Row="7"
-                       Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        x:Name="ent_Address"></Entry>
                 <Label Grid.Row="8"
-                       Grid.ColumnSpan="2"
                        Text="Số điện thoại"
                        TextColor="Black"
                        TextTransform="Uppercase"
                        HorizontalOptions="StartAndExpand"></Label>
                 <Entry Grid.Row="9"
-                       Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        x:Name="ent_Phone"></Entry>
-                <Button Grid.Row="10"
+                <!--<Button Grid.Row="10"
                         Grid.Column="0"
                         Text="Hủy"
                         FontAttributes="Bold"
                         CornerRadius="10"
                         HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"></Button>
+                        VerticalOptions="CenterAndExpand"></Button>-->
                 <Button Grid.Row="10"
-                        Grid.Column="1"
                         Text="Lưu"
                         FontAttributes="Bold"
                         CornerRadius="10"
+                        BackgroundColor="#ccac00"
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand"
                         x:Name="btn_UpdateInfo"

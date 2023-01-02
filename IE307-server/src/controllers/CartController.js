@@ -58,7 +58,7 @@ class CartController{
                                 })
                             }
                             else if(!newCart){
-                                Cart.findByIdAndUpdate(cartID,
+                                Cart.findOneAndUpdate({_id: cartID},
                                     {$push: {items: sp}, 
                                      $inc: {
                                         totalPrice: giaTien,
@@ -104,6 +104,139 @@ class CartController{
                 return res.status(404).send("Không tìm thấy sản phẩm");
             }
         })
+    }
+
+    //[DELETE] cart/delete
+    async delete(req, res){
+        const userID=req.body.userID;
+        const productID=req.body.productID;
+        const product=await Products.findById(productID);
+        if(product){
+            Cart.findOne({userID: userID},(err,cart)=>{
+                if(cart){
+                    const cartID=cart.id;
+                    let itemID, itemQuanity;
+                    cart.items.forEach(sp => {
+                        if(sp.item.id==productID){
+                            itemID=sp.id;
+                            itemQuanity=sp.quantity;
+                        }
+                    });
+                    Cart.findOneAndUpdate({_id: cartID, items: {$elemMatch: {item: product}}},
+                        {$pull: {items: {_id: itemID }},
+                        $inc: {totalPrice: -(product.price*itemQuanity), totalQuantity: -itemQuanity}}
+                        ,(err,gioHang)=>{
+                            if(gioHang){
+                                return res.status(200).send("Đã xóa sản phẩm thành công");
+                            }
+                            else if(!gioHang){
+                                return res.status(400).send("Không tìm thấy sản phẩm");
+                            }
+                            else{
+                                return res.status(500).send("Lỗi server");
+                            }
+                        })
+                }
+                else if(!cart){
+                    return res.status(404).send("Không tìm thấy giỏ hàng");
+                }
+                else{
+                    return res.status(500).send("Lỗi server");
+                }
+            })
+        }
+        else{
+            return res.status(500).send("Sản phẩm không tồn tại");
+        }
+    }
+
+    //[PUT] cart/inc
+    async inc(req,res){
+        const userID=req.body.userID;
+        const productID=req.body.productID;
+        const product=await Products.findById(productID);
+        if(product){
+            Cart.findOne({userID: userID},(err,cart)=>{
+                if(cart){
+                    const cartID=cart.id;
+                    let itemID, itemQuanity;
+                    cart.items.forEach(sp => {
+                        if(sp.item.id==productID){
+                            itemID=sp.id;
+                            itemQuanity=sp.quantity;
+                        }
+                    });
+                    Cart.findOneAndUpdate({_id: cartID, items: {$elemMatch: {item: product}}},
+                        {$inc: {totalPrice: product.price, totalQuantity: 1, 'items.$.quantity': 1, 'items.$.price': product.price}}
+                        ,(err,gioHang)=>{
+                            if(gioHang){
+                                return res.status(200).send("Đã tăng số lượng sản phẩm thành công");
+                            }
+                            else if(!gioHang){
+                                return res.status(400).send("Không tìm thấy sản phẩm");
+                            }
+                            else{
+                                return res.status(500).send("Lỗi server");
+                            }
+                        })
+                }
+                else if(!cart){
+                    return res.status(404).send("Không tìm thấy giỏ hàng");
+                }
+                else{
+                    return res.status(500).send("Lỗi server");
+                }
+            })
+        }
+        else{
+            return res.status(500).send("Sản phẩm không tồn tại");
+        }
+    }
+
+    //[PUT] cart/reduce
+    async reduce(req, res){
+        const userID=req.body.userID;
+        const productID=req.body.productID;
+        const product=await Products.findById(productID);
+        if(product){
+            Cart.findOne({userID: userID},(err,cart)=>{
+                if(cart){
+                    const cartID=cart.id;
+                    let itemID, itemQuanity;
+                    cart.items.forEach(sp => {
+                        if(sp.item.id==productID){
+                            itemID=sp.id;
+                            itemQuanity=sp.quantity;
+                        }
+                    });
+                    if(itemQuanity==1){
+                        return res.status(406).send("Không thể giảm tiếp sản phẩm");
+                    }
+                    Cart.findOneAndUpdate({_id: cartID, items: {$elemMatch: {item: product}}},
+                        {$inc: {totalPrice: -product.price, totalQuantity: -1, 'items.$.quantity': -1, 'items.$.price': -product.price}}
+                        ,(err,gioHang)=>{
+                            if(gioHang){
+                                return res.status(200).send("Đã giảm số lượng sản phẩm thành công");
+                            }
+                            else if(!gioHang){
+                                return res.status(400).send("Không tìm thấy sản phẩm");
+                            }
+                            else{
+                                return res.status(500).send("Lỗi server");
+                            }
+                        })
+                }
+                else if(!cart){
+                    return res.status(404).send("Không tìm thấy giỏ hàng");
+                }
+                else{
+                    return res.status(500).send("Lỗi server");
+                }
+            })
+        }
+        else{
+            return res.status(500).send("Sản phẩm không tồn tại");
+        }
     }
 }
 

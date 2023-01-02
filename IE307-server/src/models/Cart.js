@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
+const mongooseDelete=require('mongoose-delete');
+const { all } = require('../routes/cart');
 
 const ProductSchema = new Schema({
     productId: { type: ObjectId },
@@ -30,6 +32,18 @@ const Cart = new Schema({
         type: Number,
         default: 0
     },
+    receiver: {
+        type: String,
+    },
+    phone: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    pay: {
+        type: String
+    },
     items:[{
         item: ProductSchema,
         quantity: {
@@ -42,5 +56,7 @@ const Cart = new Schema({
         }
     }]
 },{timestamps: true});
+
+Cart.plugin(mongooseDelete,{overrideMethods: 'all'});
 
 module.exports=new mongoose.model("Cart", Cart);

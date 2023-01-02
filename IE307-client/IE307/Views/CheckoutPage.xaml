@@ -19,28 +19,50 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Label FontAttributes="Bold"
-                                   FontSize="16"
+                                   FontSize="20"
                                    HorizontalOptions="StartAndExpand"
                                    Text="Thông tin nhận hàng"
                                    TextColor="Black"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="0">
                             </Label>
-                            <Label TextColor="Black"
-                                   Opacity="0.7"
-                                   Text="{Binding username, StringFormat='Tên: {0:F2}'}"
-                                   FontSize="12"
-                                   Grid.Row="1" />
-                            <Label TextColor="Black"
-                                   Opacity="0.7"
-                                   Text="{Binding phone, StringFormat='Số điện thoại: {0:F2}'}"
-                                   FontSize="12"
-                                   Grid.Row="2" />
-                            <Label TextColor="Black"
-                                   Opacity="0.7"
-                                   Text="{Binding address, StringFormat='Địa chỉ: {0:F2}'}"
-                                   FontSize="12"
-                                   Grid.Row="2" />
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="Auto"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Tên:"
+                                       FontSize="16" 
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center"/>
+                                <Entry Grid.Row="0"
+                                       Grid.Column="1"></Entry>
+                            </Grid>
+                            <Grid Grid.Row="2"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Số điện thoại:"
+                                       FontSize="16"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="0"></Entry>
+                            </Grid>
+                            <Grid Grid.Row="3"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Địa chỉ:"
+                                       FontSize="16"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="0"></Entry>
+                            </Grid>
                         </Grid>
                     </Frame>
                 </StackLayout>
@@ -69,7 +91,7 @@
                                             <Label FontSize="16"
                                                    HorizontalOptions="StartAndExpand"
                                                    Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                   TextColor="OrangeRed">
+                                                   TextColor="#ccac00">
                                             </Label>
                                             <Frame Margin="0"
                                                    Padding="0"
@@ -129,7 +151,7 @@
                                        FontSize="18"
                                        HorizontalOptions="Center"
                                        x:Name="lb_TotalPrice"
-                                       TextColor="OrangeRed"
+                                       TextColor="#ccac00"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
@@ -138,6 +160,7 @@
                                     Padding="0"
                                     Text="MUA HÀNG"
                                     WidthRequest="100"
+                                    BackgroundColor="#ccac00"
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="CenterAndExpand"
                                     Clicked="order_Clicked">

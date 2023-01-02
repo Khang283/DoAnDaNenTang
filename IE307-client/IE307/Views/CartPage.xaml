@@ -32,7 +32,7 @@
                                             <Label FontSize="16"
                                                    HorizontalOptions="StartAndExpand"
                                                    Text="{Binding price, StringFormat='{0:F2} đ'}"
-                                                   TextColor="OrangeRed">
+                                                   TextColor="#ccac00">
                                             </Label>
                                             <Frame Margin="0"
                                                    Padding="0"
@@ -47,7 +47,10 @@
                                                             HorizontalOptions="Center"
                                                             Text="-"
                                                             Background="lightgray"
-                                                            TextColor="Black"></Button>
+                                                            TextColor="Black"
+                                                            x:Name="btn_ReduceItem"
+                                                            Clicked="btn_ReduceItem_Clicked"
+                                                            CommandParameter="{Binding item.ProductId}"></Button>
                                                     <StackLayout HeightRequest="40"
                                                                  VerticalOptions="FillAndExpand"
                                                                  WidthRequest="40">
@@ -56,8 +59,8 @@
                                                                Text="{Binding quantity}"
                                                                TextColor="Black"
                                                                VerticalOptions="CenterAndExpand"
-                                                               VerticalTextAlignment="Center">
-                                                        </Label>
+                                                               VerticalTextAlignment="Center"
+                                                               ></Label>
                                                     </StackLayout>
                                                     <Button HeightRequest="40"
                                                             VerticalOptions="FillAndExpand"
@@ -66,7 +69,10 @@
                                                             HorizontalOptions="Center"
                                                             Text="+"
                                                             Background="lightgray"
-                                                            TextColor="Black"></Button>
+                                                            TextColor="Black"
+                                                            x:Name="btn_IncreaseItem"
+                                                            Clicked="btn_IncreaseItem_Clicked"
+                                                            CommandParameter="{Binding item.ProductId}"></Button>
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
@@ -79,7 +85,8 @@
                                                    WidthRequest="30">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer x:Name="Delete"
-                                                                          Tapped="Delete_Tapped"></TapGestureRecognizer>
+                                                                          Tapped="Delete_Tapped"
+                                                                          CommandParameter="{Binding item.ProductId}"></TapGestureRecognizer>
                                                 </Image.GestureRecognizers>
                                             </Image>
                                         </StackLayout>
@@ -124,7 +131,7 @@
                                        FontSize="18"
                                        HorizontalOptions="Center"
                                        x:Name="lb_TotalPrice"
-                                       TextColor="OrangeRed"
+                                       TextColor="#ccac00"
                                        VerticalOptions="CenterAndExpand"
                                        VerticalTextAlignment="Center">
                                 </Label>
@@ -132,10 +139,11 @@
                             <Button Margin="0,0,30,0"
                                     Padding="0"
                                     Text="THANH TOÁN"
+                                    BackgroundColor="#ccac00"
                                     WidthRequest="100"
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="CenterAndExpand"
-                                    Clicked="checkout_Clicked">
+                                    Clicked="btn_Checkout_Clicked">
                             </Button>
                         </StackLayout>
                     </Frame>
