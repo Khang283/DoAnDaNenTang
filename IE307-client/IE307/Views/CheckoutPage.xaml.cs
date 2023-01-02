@@ -16,5 +16,11 @@ namespace IE307.Views
         {
             InitializeComponent();
         }
+
+        private async void order_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Thông báo", "Đặt hàng thành công", "OK");
+
+        }
     }
 }

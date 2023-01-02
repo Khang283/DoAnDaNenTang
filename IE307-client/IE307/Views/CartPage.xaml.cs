@@ -144,5 +144,10 @@ namespace IE307.Views
                 await DisplayAlert("Thông báo", "Đã xảy ra lỗi", "OK");
             }
         }
+
+        private void checkout_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CheckoutPage());
+        }
     }
 }
