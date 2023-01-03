@@ -264,16 +264,23 @@
                                                                     </Image.GestureRecognizers>
                                                                 </Image>-->
                                                             </Grid>
-                                                            <StackLayout Orientation="Horizontal">
-                                                                <Label Text="5"
+                                                            <Grid ColumnDefinitions="*,*">
+                                                                <StackLayout Orientation="Horizontal"
+                                                                             Grid.Column="0">
+                                                                    <Label Text="5"
+                                                                           FontSize="16"
+                                                                           TextColor="Black" />
+                                                                    <Image Source="star.png"
+                                                                           VerticalOptions="Center"
+                                                                           Aspect="AspectFill"
+                                                                           HeightRequest="20"
+                                                                           WidthRequest="20"></Image>
+                                                                </StackLayout>
+                                                                <Label Text=" 69 đã bán"
                                                                        FontSize="16"
-                                                                       TextColor="Black" />
-                                                                <Image Source="star.png"
-                                                                       VerticalOptions="Center"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="20"
-                                                                       WidthRequest="20"></Image>
-                                                            </StackLayout>
+                                                                       Grid.Column="1"
+                                                                       HorizontalOptions="End"></Label>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -352,16 +359,23 @@
                                                                     </Image.GestureRecognizers>
                                                                 </Image>-->
                                                             </Grid>
-                                                            <StackLayout Orientation="Horizontal">
-                                                                <Label Text="5"
+                                                            <Grid ColumnDefinitions="*,*">
+                                                                <StackLayout Orientation="Horizontal"
+                                                                             Grid.Column="0">
+                                                                    <Label Text="5"
+                                                                           FontSize="16"
+                                                                           TextColor="Black" />
+                                                                    <Image Source="star.png"
+                                                                           VerticalOptions="Center"
+                                                                           Aspect="AspectFill"
+                                                                           HeightRequest="20"
+                                                                           WidthRequest="20"></Image>
+                                                                </StackLayout>
+                                                                <Label Text=" 69 đã bán"
                                                                        FontSize="16"
-                                                                       TextColor="Black" />
-                                                                <Image Source="star.png"
-                                                                       VerticalOptions="Center"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="20"
-                                                                       WidthRequest="20"></Image>
-                                                            </StackLayout>
+                                                                       Grid.Column="1"
+                                                                       HorizontalOptions="End"></Label>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>

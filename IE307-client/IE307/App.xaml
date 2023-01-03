@@ -43,8 +43,14 @@
                 <Setter Property="FontFamily"
                         Value="Asul.ttf#Asul" />
             </Style>
-           
             
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor"
+                        Value="#ccac00" />
+                <Setter Property="BarTextColor"
+                        Value="White" />
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>
