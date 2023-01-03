@@ -4,7 +4,7 @@
              x:Class="IE307.Views.CartPage"
              Title="Giỏ hàng"
              Shell.NavBarIsVisible="False">
-    
+
     <ContentPage.Content>
         <StackLayout>
             <Frame HasShadow="False"

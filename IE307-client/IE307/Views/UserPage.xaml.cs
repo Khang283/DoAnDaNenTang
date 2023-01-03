@@ -43,5 +43,10 @@ namespace IE307.Views
         {
             Shell.Current.GoToAsync("//login");
         }
+
+        private void History_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HistoryPage());
+        }
     }
 }

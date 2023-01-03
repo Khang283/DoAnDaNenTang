@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IE307.Views.HistoryDetailPage"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#fafafa">
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="white">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label FontAttributes="Bold"
+                                   FontSize="20"
+                                   HorizontalOptions="StartAndExpand"
+                                   Text="Thông tin nhận hàng"
+                                   TextColor="#002d5c"
+                                   VerticalTextAlignment="Center"
+                                   Grid.Row="0">
+                            </Label>
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="Auto"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Tên:"
+                                       FontSize="16"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="khang"></Label>
+                            </Grid>
+                            <Grid Grid.Row="2"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Số điện thoại:"
+                                       FontSize="16"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="0"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="012345678"></Label>
+                            </Grid>
+                            <Grid Grid.Row="3"
+                                  ColumnDefinitions="Auto, 100*">
+                                <Label TextColor="Black"
+                                       Opacity="0.7"
+                                       Text="Địa chỉ:"
+                                       FontSize="16"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="0"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="123 TPHCM"></Label>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <Frame HasShadow="False"
+                       BackgroundColor="white">
+                    <StackLayout>
+                        <Label FontAttributes="Bold"
+                               FontSize="20"
+                               Text="Thông tin giỏ hàng"
+                               TextColor="#002d5c">
+                        </Label>
+                        <CollectionView x:Name="cv_CartList">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Frame Margin="0,8,0,8"
+                                               Padding="0"
+                                               BackgroundColor="White"
+                                               HasShadow="True">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout Margin="0,0,15,0">
+                                                    <Image Aspect="AspectFit"
+                                                           HeightRequest="120"
+                                                           Source="{Binding item.image}"
+                                                           WidthRequest="120" />
+                                                </StackLayout>
+                                                <StackLayout Margin="15,0,0,0">
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding item.name}"
+                                                           TextColor="Black">
+                                                    </Label>
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                                           TextColor="#ccac00">
+                                                    </Label>
+                                                    <Frame Margin="0"
+                                                           Padding="0"
+                                                           BackgroundColor="WhiteSmoke"
+                                                           CornerRadius="8"
+                                                           HasShadow="False">
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <StackLayout HeightRequest="40"
+                                                                         VerticalOptions="FillAndExpand"
+                                                                         WidthRequest="40">
+                                                                <Label FontSize="16"
+                                                                       HorizontalOptions="Center"
+                                                                       Text="{Binding quantity}"
+                                                                       TextColor="Black"
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       VerticalTextAlignment="Center">
+                                                                </Label>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="white">
+                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
+                            <Label Text="Phương thức thanh toán"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="#002d5c" />
+                            <RadioButton Content="COD" />
+                            <RadioButton Content="Chuyển khoản" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout>
+                    <Frame HasShadow="False"
+                           BackgroundColor="white">
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="End">
+                            <Label FontSize="16"
+                                   Text="Tổng tiền: "></Label>
+                            <Label HorizontalOptions="End"
+                                   FontSize="16"
+                                   TextColor="#ccac00"
+                                   Text="100k "></Label>
+                        </StackLayout>
+
+
+                    </Frame>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
