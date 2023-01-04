@@ -1,4 +1,5 @@
 const { parse } = require('dotenv');
+const Account = require('../models/Account');
 const Cart=require('../models/Cart');
 const Products = require('../models/Products');
 
@@ -237,6 +238,69 @@ class CartController{
         else{
             return res.status(500).send("Sản phẩm không tồn tại");
         }
+    }
+
+    //[POST] /cart/checkout
+    async Checkout(req, res){
+        const userID=req.body.userID;
+        const receiver=req.body.receiver;
+        const address=req.body.address;
+        const phone=req.body.phone;
+        const pay=req.body.pay;
+        let account=await Account.findById(userID).exec();
+        if(account){
+            let cart=await Cart.findOne({userID: userID}).exec();
+            if(cart){
+                cart.items.forEach(sp => {
+                    Products.findById(sp.item.id,(err, product)=>{
+                        product.update({$inc: {sold: sp.quantity}}).exec(()=>{
+                            console.log("Cập nhật sản phẩm thành công");
+                        });
+                    });
+                });
+                await cart.update({$set: {receiver: receiver, address: address, phone: phone, pay: pay}}).exec((err, giohang)=>{
+                    if(giohang){
+                        Cart.deleteById(cart.id,(err,gioHang)=>{
+                            if(gioHang){
+                                return res.status(200).send("Đã thanh toán thành công");
+                            }
+                            else if(!gioHang){
+                                return res.status(404).send("Không tìm thấy giỏ hàng để xóa");
+                            }
+                            else{
+                                return res.status(500).send("Lỗi server");
+                            }
+                        })
+                    }
+                    else{
+                        return res.status(500).send("Không thể update giỏ hàng");
+                    }
+                })
+            }
+            else{
+                return res.status(404).send("Không tìm thấy giỏ hàng");
+            }
+        }
+        else{
+            return res.status(404).send("Không tìm thấy tài khoản");
+        }
+
+    }
+
+    //[POST] cart/history
+    History(req, res){
+        const userID=req.body.userID;
+        Cart.findDeleted({userID: userID},(err, cart)=>{
+            if(cart){
+                return res.status(200).json(cart);
+            }
+            else if(!cart){
+                return res.status(404).send("Không tìm thấy lịch sử");
+            }
+            else{
+                return res.status(500).send("Lỗi server");
+            }
+        })
     }
 }
 

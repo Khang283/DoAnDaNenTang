@@ -11,6 +11,7 @@ const Product = new Schema({
     price: { type: String, default: 0 },
     type: { type: String, max: 25 },
     material: { type: String, max: 25, default: 'Silver' },
+    sold: {type: Number, default: 0},
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });

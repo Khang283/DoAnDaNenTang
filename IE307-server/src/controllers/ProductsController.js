@@ -15,8 +15,6 @@ class ProductsController{
         })
     }
 
-    
-
     //[POST] /product/addToFavorite
     async AddToFavorite(req, res){
         const userID=req.body.userID;
@@ -123,6 +121,35 @@ class ProductsController{
                 return res.status(404).send(err.message);
             }
         });
+    }
+
+    //[POST] /products/favorite
+    async GetFavorite(req, res){
+        const userID=req.body.userID;
+        const account= await Account.findById(userID).exec();
+        if(account){
+            if(account.favorite){
+                return res.status(200).json(account.favorite);
+            }
+            else{
+                return res.status(404).send("Không tìm thấy danh sách yêu thích");
+            }
+        }
+        else{
+            return res.status(404).send("Không tìm thấy tài khoản");
+        }
+    }
+    
+    //[GET] /products/bestsale
+    BestSale(req, res){
+        Product.find().sort({sold: -1}).limit(8).lean().exec((err,product)=>{
+            if(product){
+                return res.status(200).json(product);
+            }
+            else{
+                return res.status(404).send("Không tìm thấy sản phẩm");
+            }
+        })
     }
 }
 
