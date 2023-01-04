@@ -26,7 +26,7 @@
                             </Label>
                             <Grid Grid.Row="1"
                                   RowDefinitions="Auto"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Tên:"
@@ -41,7 +41,7 @@
                                        Text="khang"></Label>
                             </Grid>
                             <Grid Grid.Row="2"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Số điện thoại:"
@@ -56,7 +56,7 @@
                                        Text="012345678"></Label>
                             </Grid>
                             <Grid Grid.Row="3"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Địa chỉ:"
@@ -108,25 +108,10 @@
                                                            Text="{Binding price, StringFormat='{0:F2} đ'}"
                                                            TextColor="#ccac00">
                                                     </Label>
-                                                    <Frame Margin="0"
-                                                           Padding="0"
-                                                           BackgroundColor="WhiteSmoke"
-                                                           CornerRadius="8"
-                                                           HasShadow="False">
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <StackLayout HeightRequest="40"
-                                                                         VerticalOptions="FillAndExpand"
-                                                                         WidthRequest="40">
-                                                                <Label FontSize="16"
-                                                                       HorizontalOptions="Center"
-                                                                       Text="{Binding quantity}"
-                                                                       TextColor="Black"
-                                                                       VerticalOptions="CenterAndExpand"
-                                                                       VerticalTextAlignment="Center">
-                                                                </Label>
-                                                            </StackLayout>
-                                                        </StackLayout>
-                                                    </Frame>
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding quantity, StringFormat='Số lượng: {0:F2}'}">
+                                                    </Label>
                                                 </StackLayout>
                                             </StackLayout>
                                         </Frame>
@@ -139,13 +124,13 @@
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
-                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
+                        <StackLayout>
                             <Label Text="Phương thức thanh toán"
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    TextColor="#002d5c" />
-                            <RadioButton Content="COD" />
-                            <RadioButton Content="Chuyển khoản" />
+                            <Label Text="COD - Thanh toán khi nhận hàng"
+                                   FontSize="16" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
