@@ -43,7 +43,7 @@ namespace IE307.Views
                 var resultContent = await result.Content.ReadAsStringAsync();
                 var cart = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<Cart>(resultContent);
                 cv_CartList.ItemsSource = cart.items;
-                lb_TotalPrice.Text = cart.totalPrice.ToString() + " đ";
+                lb_TotalPrice.Text = String.Format("{0:F3} đ", cart.totalPrice.ToString());
             }
             else
             {

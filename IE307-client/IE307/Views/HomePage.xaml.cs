@@ -20,6 +20,11 @@ namespace IE307.Views
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             ListBestSale();
             ListRecommend();
         }

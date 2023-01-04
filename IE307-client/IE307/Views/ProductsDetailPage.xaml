@@ -33,7 +33,7 @@
                                         </Label>
 
                                         <Label FontSize="20"
-                                               Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                               Text="{Binding price, StringFormat='{0:F3} đ'}"
                                                TextColor="#ccac00">
                                         </Label>
 
@@ -63,7 +63,7 @@
                                                     ImageSource="smallstar.png" />
                                             <Label Margin="10,0,0,0"
                                                    Grid.Column="5"
-                                                   Text="5.0 | (69)"
+                                                   Text="{Binding sold, StringFormat='5 | ({0:F0})'}"
                                                    TextColor="Black"
                                                    FontSize="20"
                                                    VerticalOptions="Center" />
@@ -83,7 +83,7 @@
                                                FontSize="18"
                                                HorizontalOptions="StartAndExpand"
                                                Text="Mô tả"
-                                               TextColor="Black"
+                                               TextColor="#002d5c"
                                                VerticalTextAlignment="Center"
                                                Grid.Row="0">
                                         </Label>
@@ -107,7 +107,7 @@
                                                FontSize="18"
                                                HorizontalOptions="StartAndExpand"
                                                Text="Chi tiết sản phẩm"
-                                               TextColor="Black"
+                                               TextColor="#002d5c"
                                                VerticalTextAlignment="Center"
                                                Grid.Row="0" >
                                         </Label>

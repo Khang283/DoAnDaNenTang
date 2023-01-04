@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IE307.Views.CheckoutPage"
-             Shell.TabBarIsVisible="False"
-             Title="Thanh toán">
+             x:Class="IE307.Views.HistoryDetailPage"
+             Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#fafafa">
@@ -31,13 +30,15 @@
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Tên:"
-                                       FontSize="16" 
+                                       FontSize="16"
                                        Grid.Column="0"
                                        Grid.Row="0"
-                                       VerticalOptions="Center"/>
-                                <Entry Grid.Row="0"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Row="0"
                                        Grid.Column="1"
-                                       x:Name="ent_Receiver"></Entry>
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="khang"></Label>
                             </Grid>
                             <Grid Grid.Row="2"
                                   ColumnDefinitions="Auto, 100*">
@@ -48,9 +49,11 @@
                                        Grid.Column="0"
                                        Grid.Row="0"
                                        VerticalOptions="Center" />
-                                <Entry Grid.Column="1"
+                                <Label Grid.Column="1"
                                        Grid.Row="0"
-                                       x:Name="ent_Phone"></Entry>
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="012345678"></Label>
                             </Grid>
                             <Grid Grid.Row="3"
                                   ColumnDefinitions="Auto, 100*">
@@ -61,9 +64,11 @@
                                        Grid.Column="0"
                                        Grid.Row="0"
                                        VerticalOptions="Center" />
-                                <Entry Grid.Column="1"
+                                <Label Grid.Column="1"
                                        Grid.Row="0"
-                                       x:Name="ent_Address"></Entry>
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       Text="123 TPHCM"></Label>
                             </Grid>
                         </Grid>
                     </Frame>
@@ -100,7 +105,7 @@
                                                     </Label>
                                                     <Label FontSize="16"
                                                            HorizontalOptions="StartAndExpand"
-                                                           Text="{Binding price, StringFormat='{0:F3} đ'}"
+                                                           Text="{Binding price, StringFormat='{0:F2} đ'}"
                                                            TextColor="#ccac00">
                                                     </Label>
                                                     <Frame Margin="0"
@@ -134,13 +139,13 @@
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
-                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod" >
+                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
                             <Label Text="Phương thức thanh toán"
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    TextColor="#002d5c" />
-                            <RadioButton Content="COD" CheckedChanged="RadioButton_CheckedChanged"/>
-                            <RadioButton Content="Chuyển khoản" CheckedChanged="RadioButton_CheckedChanged"/>
+                            <RadioButton Content="COD" />
+                            <RadioButton Content="Chuyển khoản" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -148,37 +153,18 @@
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
+
                         <StackLayout Orientation="Horizontal"
-                                     VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label Margin="30,0,35,0"
-                                       FontSize="12"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       Text="TỔNG TIỀN"
-                                       TextColor="#002d5c"
-                                       VerticalOptions="CenterAndExpand"
-                                       VerticalTextAlignment="Center">
-                                </Label>
-                                <Label Margin="30,0,35,0"
-                                       FontSize="18"
-                                       HorizontalOptions="Center"
-                                       x:Name="lb_TotalPrice"
-                                       TextColor="#ccac00"
-                                       VerticalOptions="CenterAndExpand"
-                                       VerticalTextAlignment="Center">
-                                </Label>
-                            </StackLayout>
-                            <Button Margin="0,0,30,0"
-                                    Padding="0"
-                                    Text="MUA HÀNG"
-                                    WidthRequest="100"
-                                    BackgroundColor="#ccac00"
-                                    HorizontalOptions="EndAndExpand"
-                                    VerticalOptions="CenterAndExpand"
-                                    Clicked="order_Clicked">
-                            </Button>
+                                     HorizontalOptions="End">
+                            <Label FontSize="16"
+                                   Text="Tổng tiền: "></Label>
+                            <Label HorizontalOptions="End"
+                                   FontSize="16"
+                                   TextColor="#ccac00"
+                                   Text="100k "></Label>
                         </StackLayout>
+
+
                     </Frame>
                 </StackLayout>
 

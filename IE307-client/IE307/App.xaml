@@ -7,15 +7,18 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#ccac00</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontFamily"
+                        Value="Asul.ttf#Asul" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor"
+                                            Value="#ccac00" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -27,6 +30,27 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily"
+                        Value="Asul.ttf#Asul" />
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily"
+                        Value="Asul.ttf#Asul" />
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="FontFamily"
+                        Value="Asul.ttf#Asul" />
+            </Style>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor"
+                        Value="#ccac00" />
+                <Setter Property="BarTextColor"
+                        Value="White" />
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

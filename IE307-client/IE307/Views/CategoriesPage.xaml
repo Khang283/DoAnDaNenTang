@@ -52,7 +52,7 @@
                                                 <Grid>
                                                     <Label FontSize="16"
                                                            HorizontalOptions="Center"
-                                                           Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                           Text="{Binding price,StringFormat='{0:F3} đ'}"
                                                            TextColor="#ccac00"
                                                            VerticalOptions="End">
                                                     </Label>
@@ -67,16 +67,23 @@
                                                                     </Image.GestureRecognizers>
                                                                 </Image>-->
                                                 </Grid>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="5"
+                                                <Grid ColumnDefinitions="*,*">
+                                                    <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="0">
+                                                        <Label Text="5"
+                                                               FontSize="16"
+                                                               TextColor="Black" />
+                                                        <Image Source="star.png"
+                                                               VerticalOptions="Center"
+                                                               Aspect="AspectFill"
+                                                               HeightRequest="20"
+                                                               WidthRequest="20"></Image>
+                                                    </StackLayout>
+                                                    <Label Text="{Binding sold, StringFormat='{0:F0} đã bán'}"
                                                            FontSize="16"
-                                                           TextColor="Black" />
-                                                    <Image Source="star.png"
-                                                           VerticalOptions="Center"
-                                                           Aspect="AspectFill"
-                                                           HeightRequest="20"
-                                                           WidthRequest="20"></Image>
-                                                </StackLayout>
+                                                           Grid.Column="1"
+                                                           HorizontalOptions="End"></Label>
+                                                </Grid>
                                             </StackLayout>
                                         </StackLayout>
                                     </Frame>

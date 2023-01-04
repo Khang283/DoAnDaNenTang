@@ -36,7 +36,7 @@
                                 <Label FontAttributes="Bold"
                                        FontSize="18"
                                        Text="Danh mục sản phẩm"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                                 <ScrollView Orientation="Horizontal" >
                                     <StackLayout Margin="0,20,0,0"
@@ -209,7 +209,7 @@
                                        FontSize="18"
                                        HorizontalOptions="StartAndExpand"
                                        Text="Sản phẩm bán chạy"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                             </StackLayout>
                             <StackLayout>
@@ -254,7 +254,7 @@
                                                             </Label>
                                                             <Grid>
                                                                 <Label FontSize="16"
-                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       Text="{Binding price,StringFormat='{0:F3} đ'}"
                                                                        TextColor="#ccac00"
                                                                        VerticalOptions="End"
                                                                        HorizontalOptions="Center">
@@ -270,16 +270,23 @@
                                                                     </Image.GestureRecognizers>
                                                                 </Image>-->
                                                             </Grid>
-                                                            <StackLayout Orientation="Horizontal">
-                                                                <Label Text="5"
+                                                            <Grid ColumnDefinitions="*,*">
+                                                                <StackLayout Orientation="Horizontal"
+                                                                             Grid.Column="0">
+                                                                    <Label Text="5"
+                                                                           FontSize="16"
+                                                                           TextColor="Black" />
+                                                                    <Image Source="star.png"
+                                                                           VerticalOptions="Center"
+                                                                           Aspect="AspectFill"
+                                                                           HeightRequest="20"
+                                                                           WidthRequest="20"></Image>
+                                                                </StackLayout>
+                                                                <Label Text="{Binding sold,StringFormat='{0:F0} đã bán'}"
                                                                        FontSize="16"
-                                                                       TextColor="Black" />
-                                                                <Image Source="star.png"
-                                                                       VerticalOptions="Center"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="20"
-                                                                       WidthRequest="20"></Image>
-                                                            </StackLayout>
+                                                                       Grid.Column="1"
+                                                                       HorizontalOptions="End"></Label>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -297,7 +304,7 @@
                                        FontSize="18"
                                        HorizontalOptions="StartAndExpand"
                                        Text="Đề xuất"
-                                       TextColor="Black">
+                                       TextColor="#002d5c">
                                 </Label>
                             </StackLayout>
                             <StackLayout>
@@ -358,16 +365,23 @@
                                                                     </Image.GestureRecognizers>
                                                                 </Image>-->
                                                             </Grid>
-                                                            <StackLayout Orientation="Horizontal">
-                                                                <Label Text="5"
+                                                            <Grid ColumnDefinitions="*,*">
+                                                                <StackLayout Orientation="Horizontal"
+                                                                             Grid.Column="0">
+                                                                    <Label Text="5"
+                                                                           FontSize="16"
+                                                                           TextColor="Black" />
+                                                                    <Image Source="star.png"
+                                                                           VerticalOptions="Center"
+                                                                           Aspect="AspectFill"
+                                                                           HeightRequest="20"
+                                                                           WidthRequest="20"></Image>
+                                                                </StackLayout>
+                                                                <Label Text=" 69 đã bán"
                                                                        FontSize="16"
-                                                                       TextColor="Black" />
-                                                                <Image Source="star.png"
-                                                                       VerticalOptions="Center"
-                                                                       Aspect="AspectFill"
-                                                                       HeightRequest="20"
-                                                                       WidthRequest="20"></Image>
-                                                            </StackLayout>
+                                                                       Grid.Column="1"
+                                                                       HorizontalOptions="End"></Label>
+                                                            </Grid>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>

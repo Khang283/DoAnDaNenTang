@@ -125,9 +125,9 @@
                                        VerticalOptions="CenterAndExpand"
                                        WidthRequest="10" />
                             </StackLayout>
-                            <!--<StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="" />
-                            </StackLayout.GestureRecognizers>-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="History_Clicked" />
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                         
                     </StackLayout>
