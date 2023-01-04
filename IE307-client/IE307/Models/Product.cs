@@ -17,6 +17,7 @@ namespace IE307.Models
         public string price { get; set; }
         public string type { get; set; }
         public string material { get; set; }
+        public int sold { get; set; }
         public Boolean deleted { get; set; }
 
         [BsonElement("createdAt")]

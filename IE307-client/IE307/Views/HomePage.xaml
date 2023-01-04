@@ -38,7 +38,7 @@
                                        Text="Danh mục sản phẩm"
                                        TextColor="Black">
                                 </Label>
-                                <ScrollView Orientation="Horizontal">
+                                <ScrollView Orientation="Horizontal" >
                                     <StackLayout Margin="0,20,0,0"
                                                  HeightRequest="110"
                                                  Orientation="Horizontal">
@@ -53,7 +53,7 @@
                                                            Aspect="AspectFit"
                                                            HorizontalOptions="CenterAndExpand"
                                                            Source="rings.png"
-                                                           VerticalOptions="CenterAndExpand" />
+                                                           VerticalOptions="CenterAndExpand"/>
                                                 </Frame>
                                                 <Label FontSize="12"
                                                        HorizontalOptions="Center"
@@ -63,7 +63,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesRing"
-                                                                      Tapped="CategoriesRing_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="ring"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
@@ -88,7 +89,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesPendant"
-                                                                      Tapped="CategoriesPendant_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="necklace"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
@@ -113,7 +115,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesEaring"
-                                                                      Tapped="CategoriesEaring_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="earing"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
@@ -138,7 +141,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesBracelet"
-                                                                      Tapped="CategoriesBracelet_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="bracelet"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
@@ -163,7 +167,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesWatch"
-                                                                      Tapped="CategoriesWatch_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="watch"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
 
@@ -188,7 +193,8 @@
                                             </StackLayout>
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer x:Name="CategoriesGift"
-                                                                      Tapped="CategoriesGift_Tapped"></TapGestureRecognizer>
+                                                                      CommandParameter="gift"
+                                                                      Tapped="Categories_Tapped"></TapGestureRecognizer>
                                             </StackLayout.GestureRecognizers>
                                         </StackLayout>
                                     </StackLayout>

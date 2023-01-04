@@ -2,6 +2,7 @@
 using IE307.Share;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -19,21 +20,37 @@ namespace IE307.Views
         public HomePage()
         {
             InitializeComponent();
-            LoadList();
+            ListBestSale();
+            ListRecommend();
         }
 
-        public async void LoadList()
+        private async void ListRecommend()
         {
             HttpClient http = new HttpClient();
             var result = await http.GetAsync("http://" + Utility.API_Endpoint + ":5001/products");
-            var content= await result.Content.ReadAsStringAsync();
+            var content = await result.Content.ReadAsStringAsync();
             try
             {
-                var products=MongoDB.Bson.Serialization.BsonSerializer.Deserialize<List<Product>>(content);
-                CV_BestSale.ItemsSource = products;
+                var products = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<List<Product>>(content);
                 CV_Recommend.ItemsSource = products;
             }
-            catch(Exception err)
+            catch (Exception err)
+            {
+                await DisplayAlert("Thông báo", err.ToString(), "OK");
+            }
+        }
+
+        private async void ListBestSale()
+        {
+            HttpClient http = new HttpClient();
+            var result = await http.GetAsync("http://" + Utility.API_Endpoint + ":5001/products/bestsale");
+            var content = await result.Content.ReadAsStringAsync();
+            try
+            {
+                var products = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<List<Product>>(content);
+                CV_BestSale.ItemsSource = products;
+            }
+            catch (Exception err)
             {
                 await DisplayAlert("Thông báo", err.ToString(), "OK");
             }
@@ -51,34 +68,11 @@ namespace IE307.Views
             Navigation.PushAsync(new ProductsDetailPage(product));
         }
 
-        private void CategoriesRing_Tapped(object sender, EventArgs e)
+        private void Categories_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private void CategoriesPendant_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private void CategoriesEaring_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private void CategoriesBracelet_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CategoriesPage());
-        }
-
-        private void CategoriesWatch_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CategoriesPage()); 
-        }
-
-        private void CategoriesGift_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CategoriesPage());
+            string category = ((TappedEventArgs)e).Parameter as String;
+            int page = 1;
+            Navigation.PushAsync(new CategoriesPage(category,page));
         }
 
 

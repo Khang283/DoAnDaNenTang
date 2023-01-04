@@ -145,9 +145,16 @@ namespace IE307.Views
             }
         }
 
-        private void btn_Checkout_Clicked(object sender, EventArgs e)
+        private async void btn_Checkout_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CheckoutPage());
+            if(lb_TotalPrice.Text=="0 đ")
+            {
+                await DisplayAlert("Thông báo", "Bạn chưa có sản phẩm nào trong giỏ hàng !", "OK");
+            }
+            else
+            {
+                await Navigation.PushAsync(new CheckoutPage());
+            }
         }
     }
 }

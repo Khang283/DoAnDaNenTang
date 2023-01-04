@@ -37,7 +37,8 @@
                                        Grid.Row="0"
                                        VerticalOptions="Center"/>
                                 <Entry Grid.Row="0"
-                                       Grid.Column="1"></Entry>
+                                       Grid.Column="1"
+                                       x:Name="ent_Receiver"></Entry>
                             </Grid>
                             <Grid Grid.Row="2"
                                   ColumnDefinitions="Auto, 100*">
@@ -49,7 +50,8 @@
                                        Grid.Row="0"
                                        VerticalOptions="Center" />
                                 <Entry Grid.Column="1"
-                                       Grid.Row="0"></Entry>
+                                       Grid.Row="0"
+                                       x:Name="ent_Phone"></Entry>
                             </Grid>
                             <Grid Grid.Row="3"
                                   ColumnDefinitions="Auto, 100*">
@@ -61,7 +63,8 @@
                                        Grid.Row="0"
                                        VerticalOptions="Center" />
                                 <Entry Grid.Column="1"
-                                       Grid.Row="0"></Entry>
+                                       Grid.Row="0"
+                                       x:Name="ent_Address"></Entry>
                             </Grid>
                         </Grid>
                     </Frame>
@@ -123,12 +126,13 @@
                 <StackLayout>
                     <Frame HasShadow="False"
                            BackgroundColor="white">
-                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod">
+                        <StackLayout RadioButtonGroup.GroupName="PaymentMethod" >
                             <Label Text="Phương thức thanh toán"
                                    FontSize="18"
                                    TextColor="Black" />
-                            <RadioButton Content="COD" />
-                            <RadioButton Content="Chuyển khoản" />
+                            <RadioButton Content="COD" CheckedChanged="RadioButton_CheckedChanged"/>
+                            <RadioButton Content="Chuyển khoản" CheckedChanged="RadioButton_CheckedChanged"/>
+                            <RadioButton Content="Master Card" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
                         </StackLayout>
                     </Frame>
                 </StackLayout>

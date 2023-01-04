@@ -17,8 +17,9 @@
                     </Label>
                 </StackLayout>
                 <StackLayout>
-                    <CollectionView x:Name="CV_BestSale"
-                                    SelectionMode="Single">
+                    <CollectionView x:Name="CV_Favorite"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CV_Favorite_SelectionChanged">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical"
                                              Span="2"
@@ -46,13 +47,13 @@
                                                        IsClippedToBounds="True">
                                                     <Image Aspect="AspectFit"
                                                            HeightRequest="150"
-                                                           Source="{Binding image}"
+                                                           Source="{Binding item.image}"
                                                            WidthRequest="150" />
                                                 </Frame>
 
                                                 <Label FontSize="16"
                                                        HorizontalOptions="Start"
-                                                       Text="{Binding name}"
+                                                       Text="{Binding item.name}"
                                                        TextColor="Black"
                                                        VerticalOptions="End"
                                                        MaxLines="2"
@@ -61,7 +62,7 @@
                                                 <Grid>
                                                     <Label FontSize="16"
                                                            HorizontalOptions="Center"
-                                                           Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                           Text="{Binding item.price,StringFormat='{0:F2} đ'}"
                                                            TextColor="#ccac00"
                                                            VerticalOptions="End">
                                                     </Label>

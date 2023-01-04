@@ -45,7 +45,7 @@ namespace IE307.Views
             if (response == "OK")
             {
                 isFavorited= true;
-                btn_Favorite.ImageSource = "redheart.png";
+                btn_Favorite.ImageSource = "smallredheart.png";
             }
             else
             {
@@ -93,9 +93,9 @@ namespace IE307.Views
                 var response = result.StatusCode.ToString();
                 if (response == "OK")
                 {
-                    btn_Favorite.ImageSource = "redheart.png";
+                    btn_Favorite.ImageSource = "smallredheart.png";
                     isFavorited = !isFavorited;
-                    await DisplayAlert("Thông báo", "Đã thêm vào yêu thích !", "OK");
+                    //await DisplayAlert("Thông báo", "Đã thêm vào yêu thích !", "OK");
                 }
                 else
                 {
@@ -117,7 +117,7 @@ namespace IE307.Views
                 {
                     isFavorited = !isFavorited;
                     btn_Favorite.ImageSource = "BlackHeart";
-                    await DisplayAlert("Thông báo", "Đã loại khỏi danh sách yêu thích", "OK");
+                    //await DisplayAlert("Thông báo", "Đã loại khỏi danh sách yêu thích", "OK");
                 }
                 else
                 {
