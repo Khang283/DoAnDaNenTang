@@ -6,6 +6,6 @@ namespace IE307.Share
 {
     public static class Utility
     {
-        public static string API_Endpoint = "192.168.1.5";
+        public static string API_Endpoint = "192.168.1.65";
     }
 }

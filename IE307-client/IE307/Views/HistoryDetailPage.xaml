@@ -77,7 +77,7 @@
 
                 <Frame HasShadow="False"
                        BackgroundColor="white">
-                    <StackLayout>
+                    <StackLayout HeightRequest="150">
                         <Label FontAttributes="Bold"
                                FontSize="20"
                                Text="Thông tin giỏ hàng"
