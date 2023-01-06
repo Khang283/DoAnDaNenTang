@@ -15,7 +15,7 @@
                            TextColor="#002d5c">
                     </Label>
                     <StackLayout>
-                        <CollectionView>
+                        <CollectionView x:Name="CV_CartHistory" SelectionMode="Single" SelectionChanged="CV_CartHistory_SelectionChanged">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
@@ -24,30 +24,30 @@
                                                    HasShadow="True"
                                                    CornerRadius="3">
                                                 <StackLayout>
-                                                    <Label Text="Ngày - Giờ"
+                                                    <Label Text="{Binding deletedAt}"
                                                            TextColor="Black"></Label>
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout Margin="0,0,15,0">
                                                             <Image Aspect="AspectFit"
                                                                    HeightRequest="120"
-                                                                   Source="{Binding item.image}"
+                                                                   Source="{Binding items[0].item.image}"
                                                                    WidthRequest="120" />
                                                         </StackLayout>
                                                         <StackLayout Margin="15,0,0,0">
                                                             <Label FontSize="16"
                                                                    HorizontalOptions="StartAndExpand"
-                                                                   Text="{Binding item.name}"
+                                                                   Text="{Binding items[0].item.name}"
                                                                    TextColor="Black">
                                                             </Label>
                                                             <Label FontSize="16"
                                                                    HorizontalOptions="StartAndExpand"
-                                                                   Text="{Binding price, StringFormat='{0:F2} đ'}"
+                                                                   Text="{Binding items[0].price, StringFormat='{0:F3} đ'}"
                                                                    TextColor="#ccac00">
                                                             </Label>
 
                                                             <Label FontSize="16"
                                                                    HorizontalOptions="StartAndExpand"
-                                                                   Text="{Binding quantity, StringFormat='Số lượng: {0:F2}'}"
+                                                                   Text="{Binding items[0].quantity, StringFormat='Số lượng: {0:F0}'}"
                                                                    TextColor="Black">
                                                             </Label>
                                                         </StackLayout>
@@ -60,11 +60,14 @@
                                                             FontSize="10"
                                                             WidthRequest="100000"
                                                             BackgroundColor="#f1f1f1"
-                                                            HeightRequest="30"></Button>
+                                                            HeightRequest="30"
+                                                            x:Name="btn_More"
+                                                            Clicked="btn_More_Clicked"
+                                                            CommandParameter="{Binding .}"></Button>
                                                     <Grid>
                                                         <Label HorizontalOptions="Start"
                                                                FontSize="16"
-                                                               Text="2 sản phẩm"></Label>
+                                                               Text="{Binding totalQuantity, StringFormat='{0:F0} sản phẩm'}"></Label>
                                                         <StackLayout Orientation="Horizontal"
                                                                      HorizontalOptions="End">
                                                             <Label FontSize="16"
@@ -72,14 +75,14 @@
                                                             <Label HorizontalOptions="End"
                                                                    FontSize="16"
                                                                    TextColor="#ccac00"
-                                                                   Text="100k "></Label>
+                                                                   Text="{Binding totalPrice, StringFormat='{0:F3} đ'}"></Label>
                                                         </StackLayout>
                                                     </Grid>
                                                 </StackLayout>
                                             </Frame>
-                                            <StackLayout.GestureRecognizers>
+                                            <!--<StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="HistoryDetail_Tapped" />
-                                            </StackLayout.GestureRecognizers>
+                                            </StackLayout.GestureRecognizers>-->
                                         </StackLayout>
                                     </StackLayout>
                                 </DataTemplate>

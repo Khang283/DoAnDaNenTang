@@ -62,7 +62,7 @@
                                                 <Grid>
                                                     <Label FontSize="16"
                                                            HorizontalOptions="Center"
-                                                           Text="{Binding item.price,StringFormat='{0:F2} đ'}"
+                                                           Text="{Binding item.price,StringFormat='{0:F3} đ'}"
                                                            TextColor="#ccac00"
                                                            VerticalOptions="End">
                                                     </Label>
@@ -89,7 +89,7 @@
                                                                HeightRequest="20"
                                                                WidthRequest="20"></Image>
                                                     </StackLayout>
-                                                    <Label Text=" 69 đã bán"
+                                                    <Label Text="{Binding item.sold, StringFormat='{0:F0} đã bán'}"
                                                            FontSize="16"
                                                            Grid.Column="1"
                                                            HorizontalOptions="End"></Label>

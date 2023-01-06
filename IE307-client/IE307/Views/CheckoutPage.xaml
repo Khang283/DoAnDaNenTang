@@ -17,6 +17,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
+                            
                             <Label FontAttributes="Bold"
                                    FontSize="20"
                                    HorizontalOptions="StartAndExpand"
@@ -27,10 +28,10 @@
                             </Label>
                             <Grid Grid.Row="1"
                                   RowDefinitions="Auto"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
-                                       Text="Tên:"
+                                       Text="Tên người nhận:"
                                        FontSize="16" 
                                        Grid.Column="0"
                                        Grid.Row="0"
@@ -40,7 +41,7 @@
                                        x:Name="ent_Receiver"></Entry>
                             </Grid>
                             <Grid Grid.Row="2"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Số điện thoại:"
@@ -53,7 +54,7 @@
                                        x:Name="ent_Phone"></Entry>
                             </Grid>
                             <Grid Grid.Row="3"
-                                  ColumnDefinitions="Auto, 100*">
+                                  ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
                                        Text="Địa chỉ:"
@@ -103,25 +104,10 @@
                                                            Text="{Binding price, StringFormat='{0:F3} đ'}"
                                                            TextColor="#ccac00">
                                                     </Label>
-                                                    <Frame Margin="0"
-                                                           Padding="0"
-                                                           BackgroundColor="WhiteSmoke"
-                                                           CornerRadius="8"
-                                                           HasShadow="False">
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <StackLayout HeightRequest="40"
-                                                                         VerticalOptions="FillAndExpand"
-                                                                         WidthRequest="40">
-                                                                <Label FontSize="16"
-                                                                       HorizontalOptions="Center"
-                                                                       Text="{Binding quantity}"
-                                                                       TextColor="Black"
-                                                                       VerticalOptions="CenterAndExpand"
-                                                                       VerticalTextAlignment="Center">
-                                                                </Label>
-                                                            </StackLayout>
-                                                        </StackLayout>
-                                                    </Frame>
+                                                    <Label FontSize="16"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           Text="{Binding quantity, StringFormat='Số lượng: {0:F0}'}">
+                                                    </Label>
                                                 </StackLayout>
                                             </StackLayout>
                                         </Frame>

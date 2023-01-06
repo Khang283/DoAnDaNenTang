@@ -57,6 +57,6 @@ const Cart = new Schema({
     }]
 },{timestamps: true});
 
-Cart.plugin(mongooseDelete,{overrideMethods: 'all'});
+Cart.plugin(mongooseDelete,{overrideMethods: 'all', deletedAt: true});
 
 module.exports=new mongoose.model("Cart", Cart);

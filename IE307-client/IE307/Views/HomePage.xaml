@@ -7,7 +7,12 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Margin="15,25,25,0">
+            <StackLayout Margin="15,0,15,0">
+                <Image Source="logo.png"
+                       WidthRequest="100"
+                       HeightRequest="40"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"></Image>
                 <StackLayout HorizontalOptions="FillAndExpand"
                              Orientation="Horizontal">
                     <Frame Padding="0"
@@ -22,7 +27,7 @@
                                    HeightRequest="18"
                                    Source="search.png"
                                    WidthRequest="18" />
-                            <Editor WidthRequest="300"
+                            <Editor WidthRequest="321"
                                     Placeholder="Tìm kiếm"/>
                         </StackLayout>
                     </Frame>
@@ -350,7 +355,7 @@
                                                             <Grid>
                                                                 <Label FontSize="16"
                                                                        HorizontalOptions="Center"
-                                                                       Text="{Binding price,StringFormat='{0:F2} đ'}"
+                                                                       Text="{Binding price,StringFormat='{0:F3} đ'}"
                                                                        TextColor="#ccac00"
                                                                        VerticalOptions="End">
                                                                 </Label>
@@ -377,7 +382,7 @@
                                                                            HeightRequest="20"
                                                                            WidthRequest="20"></Image>
                                                                 </StackLayout>
-                                                                <Label Text=" 69 đã bán"
+                                                                <Label Text="{Binding sold, StringFormat='{0:F0} đã bán'}"
                                                                        FontSize="16"
                                                                        Grid.Column="1"
                                                                        HorizontalOptions="End"></Label>

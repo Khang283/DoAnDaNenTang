@@ -253,12 +253,12 @@ class CartController{
             if(cart){
                 cart.items.forEach(sp => {
                     Products.findById(sp.item.id,(err, product)=>{
-                        product.update({$inc: {sold: sp.quantity}}).exec(()=>{
+                        product.updateOne({$inc: {sold: sp.quantity}}).exec(()=>{
                             console.log("Cập nhật sản phẩm thành công");
                         });
                     });
                 });
-                await cart.update({$set: {receiver: receiver, address: address, phone: phone, pay: pay}}).exec((err, giohang)=>{
+                await cart.updateOne({$set: {receiver: receiver, address: address, phone: phone, pay: pay}}).exec((err, giohang)=>{
                     if(giohang){
                         Cart.deleteById(cart.id,(err,gioHang)=>{
                             if(gioHang){

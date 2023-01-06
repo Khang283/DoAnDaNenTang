@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IE307.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,13 @@ namespace IE307.Views
         public HistoryDetailPage()
         {
             InitializeComponent();
+        }
+
+        public HistoryDetailPage(Cart cart)
+        {
+            InitializeComponent();
+            cv_CartList.ItemsSource = cart.items;
+            SV_CartDetail.BindingContext = cart;    
         }
     }
 }

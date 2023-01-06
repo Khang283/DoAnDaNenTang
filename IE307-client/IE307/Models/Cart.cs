@@ -56,7 +56,7 @@ namespace IE307.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string userID { get; set; }
         [BsonElement("totalQuantity")]
-        public int totalquantity { get; set; }
+        public int totalQuantity { get; set; }
         [BsonElement("totalPrice")]
         public long totalPrice { get; set; }
         [BsonElement("receiver")]
@@ -79,6 +79,10 @@ namespace IE307.Models
         [BsonElement("updatedAt")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime updatedAt { get; set; }
+
+        [BsonElement("deletedAt")]
+        [BsonRepresentation(BsonType.DateTime)]
+        public DateTime deletedAt { get; set; }
 
         [BsonElement("__v")]
         public int __v { get; set; }
