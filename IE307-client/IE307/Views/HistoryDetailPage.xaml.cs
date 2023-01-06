@@ -22,7 +22,8 @@ namespace IE307.Views
         {
             InitializeComponent();
             cv_CartList.ItemsSource = cart.items;
-            SV_CartDetail.BindingContext = cart;    
+            SV_CartDetail.BindingContext = cart;
+            cartt.HeightRequest = 150 * cart.totalQuantity;
         }
     }
 }

@@ -31,7 +31,7 @@
                                   ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
-                                       Text="Tên người nhận:"
+                                       Text="Tên người nhận"
                                        FontSize="16" 
                                        Grid.Column="0"
                                        Grid.Row="0"
@@ -44,7 +44,7 @@
                                   ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
-                                       Text="Số điện thoại:"
+                                       Text="Số điện thoại"
                                        FontSize="16"
                                        Grid.Column="0"
                                        Grid.Row="0"
@@ -57,7 +57,7 @@
                                   ColumnDefinitions="*, 2*">
                                 <Label TextColor="Black"
                                        Opacity="0.7"
-                                       Text="Địa chỉ:"
+                                       Text="Địa chỉ"
                                        FontSize="16"
                                        Grid.Column="0"
                                        Grid.Row="0"
@@ -72,7 +72,8 @@
 
                 <Frame HasShadow="False"
                        BackgroundColor="white">
-                    <StackLayout HeightRequest="150">
+                    <StackLayout 
+                                 x:Name="cartt">
                         <Label FontAttributes="Bold"
                                FontSize="20"
                                Text="Thông tin giỏ hàng"

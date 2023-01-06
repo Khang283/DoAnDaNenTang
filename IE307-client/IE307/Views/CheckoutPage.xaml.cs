@@ -20,6 +20,7 @@ namespace IE307.Views
         {
             InitializeComponent();
             GetCartList();
+            
         }
 
         private async void GetCartList()
@@ -35,12 +36,13 @@ namespace IE307.Views
                 var cart = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<Cart>(resultContent);
                 cv_CartList.ItemsSource = cart.items;
                 lb_TotalPrice.Text = String.Format("{0:F3} đ", cart.totalPrice.ToString());
+                cartt.HeightRequest = 150 * cart.totalQuantity;
             }
             else
             {
                 lb_TotalPrice.Text = "0 đ";
             }
-
+            
         }
 
         private async void order_Clicked(object sender, EventArgs e)
