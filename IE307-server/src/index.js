@@ -23,6 +23,9 @@ db.connect();
 //Routes
 routes(app);
 
+process.env.TZ="Asia/Ho_Chi_Minh"
+
 let server=app.listen(process.env.PORT || PORT,()=>{
+    console.log(new Date().toLocaleString('en-US',{timeZone: 'Asia/Ho_Chi_Minh'}));
     console.log(`Server start on ${server.address().port}`);
 });
